@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Make a secure one-time or recurring donation to Encouragement by Empowerment and help transform lives."
+    />
+    <title>Donate | Encouragement by Empowerment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/jpeg" href="logo.jpeg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header page-header">
+      <div class="container nav-wrap">
+<button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+          <ul>
+            <li><a href="index.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5L12 4l9 7.5"></path><path d="M6.5 10.8V20h11V10.8"></path><path d="M10 20v-5h4v5"></path></svg><span>Home</span></a></li>
+            <li><a href="about.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5h6a3 3 0 0 1 3 3V20a3 3 0 0 0-3-3h-6z"></path><path d="M20.5 6.5h-6a3 3 0 0 0-3 3V20a3 3 0 0 1 3-3h6z"></path><path d="M12 9.5v9.8"></path></svg><span>About Us</span></a></li>
+            <li><a href="programs.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="6" rx="1.5"></rect><rect x="3.5" y="13.5" width="8" height="6" rx="1.5"></rect><rect x="12.5" y="13.5" width="8" height="6" rx="1.5"></rect></svg><span>Programs</span></a></li>
+            <li><a href="involved.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.8 14.5h5.2l2.2 2.2a2 2 0 0 0 2.8 0l1-1"></path><path d="M21.2 14.5H16l-2.2 2.2a2 2 0 0 1-2.8 0l-1-1"></path><path d="M7 14.5l2.3-3.3a2 2 0 0 1 3.1-.2l2.6 2.7"></path></svg><span>Get Involved</span></a></li>
+            <li><a href="events.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2"></rect><path d="M8 8h8"></path><path d="M8 11h8"></path><path d="M8 14h5"></path><path d="M16.5 4.5v15"></path></svg><span>Events &amp; News</span></a></li>
+            <li><a href="contact.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.2L20.5 4.5 14 20l-2.9-6-8.1-2.8z"></path><path d="M11.1 14l9.4-9.5"></path></svg><span>Contact</span></a></li>
+</ul>
+        </nav>
+        <a class="nav-donate nav-donate-cta nav-current" href="donate.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19.2l-6.7-6.4a4.2 4.2 0 0 1 5.9-6l.8.8.8-.8a4.2 4.2 0 0 1 5.9 6z"></path><circle cx="18.5" cy="17.8" r="3"></circle><path d="M18.5 16.3v3"></path><path d="M17.5 17.2h2"></path></svg><span>Donate</span></a>
+      </div>
+      <section class="page-hero" aria-labelledby="donate-title">
+        <div class="container reveal">
+          <p class="hero-kicker">Secure Giving</p>
+          <h1 id="donate-title">Your Gift Creates Lasting Encouragement</h1>
+          <p>Support mentorship, resources, and trusted nonprofit services in your community.</p>
+        </div>
+      </section>
+    </header>
+
+    <main id="main-content">
+      <section class="section">
+        <div class="container donate-layout">
+          <article class="card form-card reveal">
+            <h2>Choose Donation Type</h2>
+            <div class="toggle-group" role="group" aria-label="Donation type">
+              <button class="toggle-btn active" type="button" data-frequency="one-time">One-Time</button>
+              <button class="toggle-btn" type="button" data-frequency="recurring">Recurring</button>
+            </div>
+
+            <label class="donation-amount-label" for="donation-amount">Donation Amount</label>
+            <p class="donation-amount-subtitle">Tap a quick amount or enter a custom value in USD.</p>
+            <div class="amount-picker" role="group" aria-label="Quick donation amounts">
+              <button class="amount-chip active" type="button" data-amount-choice="25">$25</button>
+              <button class="amount-chip" type="button" data-amount-choice="50">$50</button>
+              <button class="amount-chip" type="button" data-amount-choice="100">$100</button>
+              <button class="amount-chip" type="button" data-amount-choice="250">$250</button>
+              <button class="amount-chip" type="button" data-amount-choice="500">$500</button>
+              <button class="amount-chip" type="button" data-amount-choice="custom">Custom</button>
+            </div>
+            <input id="donation-amount" name="amount" type="number" min="1" step="1" value="25" placeholder="Enter amount in USD" required />
+
+            <p class="form-note" id="donation-note">You are making a one-time gift.</p>
+
+            <h3>Choose Payment System</h3>
+            <p class="form-intro">Use PayPal or another payment system below to continue with your donation.</p>
+            <div class="payment-way-grid" role="group" aria-label="Payment systems">
+              <button class="payment-way active" type="button" aria-label="PayPal" data-payment-way="PayPal" data-unset-alert data-alert-message="Payment Is Not Integrated Yet Since It Is A Demo Project.">
+                <svg class="payment-way-logo" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 170 48" aria-hidden="true"><path fill="#003087" d="M62.56 28.672a10.111 10.111 0 009.983-8.56c.78-4.967-3.101-9.303-8.6-9.303H55.08a.689.689 0 00-.69.585l-3.95 25.072a.643.643 0 00.634.742h4.69a.689.689 0 00.688-.585l1.162-7.365a.689.689 0 01.689-.586h4.257zm3.925-8.786c-.29 1.836-1.709 3.189-4.425 3.189h-3.474l1.053-6.68h3.411c2.81.006 3.723 1.663 3.435 3.496v-.005zm26.378-1.18H88.41a.69.69 0 00-.69.585l-.144.924s-3.457-3.775-9.575-1.225c-3.51 1.461-5.194 4.48-5.91 6.69 0 0-2.277 6.718 2.87 10.417 0 0 4.771 3.556 10.145-.22l-.093.589a.642.642 0 00.634.742h4.451a.689.689 0 00.69-.585l2.708-17.175a.643.643 0 00-.634-.742zm-6.547 9.492a4.996 4.996 0 01-4.996 4.276 4.513 4.513 0 01-1.397-.205c-1.92-.616-3.015-2.462-2.7-4.462a4.996 4.996 0 015.014-4.277c.474-.005.946.065 1.398.206 1.913.614 3.001 2.46 2.686 4.462h-.005z"/><path fill="#0070E0" d="M126.672 28.672a10.115 10.115 0 009.992-8.56c.779-4.967-3.101-9.303-8.602-9.303h-8.86a.69.69 0 00-.689.585l-3.962 25.079a.637.637 0 00.365.683.64.64 0 00.269.06h4.691a.69.69 0 00.689-.586l1.163-7.365a.688.688 0 01.689-.586l4.255-.007zm3.925-8.786c-.29 1.836-1.709 3.189-4.426 3.189h-3.473l1.054-6.68h3.411c2.808.006 3.723 1.663 3.434 3.496v-.005zm26.377-1.18h-4.448a.69.69 0 00-.689.585l-.146.924s-3.456-3.775-9.574-1.225c-3.509 1.461-5.194 4.48-5.911 6.69 0 0-2.276 6.718 2.87 10.417 0 0 4.772 3.556 10.146-.22l-.093.589a.637.637 0 00.365.683c.084.04.176.06.269.06h4.451a.686.686 0 00.689-.586l2.709-17.175a.657.657 0 00-.148-.518.632.632 0 00-.49-.224zm-6.546 9.492a4.986 4.986 0 01-4.996 4.276 4.513 4.513 0 01-1.399-.205c-1.921-.616-3.017-2.462-2.702-4.462a4.996 4.996 0 014.996-4.277c.475-.005.947.064 1.399.206 1.933.614 3.024 2.46 2.707 4.462h-.005z"/><path fill="#003087" d="M109.205 19.131l-5.367 9.059-2.723-8.992a.69.69 0 00-.664-.492h-4.842a.516.516 0 00-.496.689l4.88 15.146-4.413 7.138a.517.517 0 00.442.794h5.217a.858.858 0 00.741-.418l13.632-22.552a.516.516 0 00-.446-.789h-5.215a.858.858 0 00-.746.417z"/><path fill="#0070E0" d="M161.982 11.387l-3.962 25.079a.637.637 0 00.365.683c.084.04.176.06.269.06h4.689a.688.688 0 00.689-.586l3.963-25.079a.637.637 0 00-.146-.517.645.645 0 00-.488-.225h-4.69a.69.69 0 00-.689.585z"/><path fill="#001C64" d="M37.146 22.26c-1.006 5.735-5.685 10.07-11.825 10.07h-3.898c-.795 0-1.596.736-1.723 1.55l-1.707 10.835c-.099.617-.388.822-1.013.822h-6.27c-.634 0-.784-.212-.689-.837l.72-7.493-7.526-.389c-.633 0-.862-.345-.772-.977l5.135-32.56c.099-.617.483-.882 1.106-.882h13.023c6.269 0 10.235 4.22 10.72 9.692 3.73 2.52 5.474 5.873 4.72 10.168z"/><path fill="#0070E0" d="M12.649 25.075l-1.907 12.133-1.206 7.612a1.034 1.034 0 001.016 1.19h6.622a1.27 1.27 0 001.253-1.072l1.743-11.06a1.27 1.27 0 011.253-1.071h3.898A12.46 12.46 0 0037.617 22.26c.675-4.307-1.492-8.228-5.201-10.165a9.96 9.96 0 01-.12 1.37 12.461 12.461 0 01-12.295 10.54h-6.1a1.268 1.268 0 00-1.252 1.07z"/><path fill="#003087" d="M10.741 37.208H3.03a1.035 1.035 0 01-1.018-1.192L7.208 3.072A1.268 1.268 0 018.46 2H21.7c6.269 0 10.827 4.562 10.72 10.089a11.567 11.567 0 00-5.399-1.287H15.983a1.27 1.27 0 00-1.254 1.071l-2.08 13.202-1.908 12.133z"/></svg>
+                <span class="payment-way-label">PayPal</span>
+              </button>
+              <button class="payment-way" type="button" aria-label="Stripe" data-payment-way="Stripe" data-unset-alert data-alert-message="Payment Is Not Integrated Yet Since It Is A Demo Project.">
+                <svg class="payment-way-logo" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" aria-hidden="true"><path d="M506 116v280c0 60.71-49.29 110-110 110H116C55.29 506 6 456.71 6 396V116C6 55.289 55.29 6 116 6h280c60.71 0 110 49.289 110 110z" fill="#635bff"/><path d="M237.458 204.11c0-10.998 9.198-15.228 24.435-15.228 21.848 0 49.446 6.486 71.293 18.048v-66.272c-23.86-9.307-47.433-12.973-71.293-12.973-58.358 0-97.167 29.893-97.167 79.81 0 77.834 109.24 65.426 109.24 98.985 0 12.973-11.499 17.202-27.597 17.202-23.86 0-54.334-9.587-78.48-22.56v67.119c26.734 11.28 53.757 16.074 78.48 16.074 59.796 0 100.905-29.047 100.905-79.526-.288-84.04-109.816-69.093-109.816-100.679z" fill="#fff"/></svg>
+                <span class="payment-way-label">Stripe</span>
+              </button>
+              <button class="payment-way" type="button" aria-label="Bank Card" data-payment-way="Bank Card" data-unset-alert data-alert-message="Payment Is Not Integrated Yet Since It Is A Demo Project.">
+                <svg class="payment-way-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 9.5h18"></path><path d="M7 15h4"></path></svg>
+                <span class="payment-way-label">Bank Card</span>
+              </button>
+              <button class="payment-way" type="button" aria-label="Mobile Money" data-payment-way="Mobile Money" data-unset-alert data-alert-message="Payment Is Not Integrated Yet Since It Is A Demo Project.">
+                <svg class="payment-way-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2"></rect><path d="M9.5 5.5h5"></path><circle cx="12" cy="18" r="1"></circle></svg>
+                <span class="payment-way-label">Mobile Money</span>
+              </button>
+            </div>
+            <p class="form-note" id="payment-method-note">Selected payment method: PayPal.</p>
+          </article>
+
+          <article class="card form-card reveal delay-1 payment-card-panel">
+            <div class="card-details" aria-labelledby="card-details-title">
+              <h3 id="card-details-title">Credit or Debit Card Details</h3>
+              <p class="secure-fill-note">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 10.5V8.2a5.5 5.5 0 1 1 11 0v2.3"></path><rect x="4.5" y="10.5" width="15" height="10" rx="2"></rect><circle cx="12" cy="15.5" r="1.2"></circle><path d="M12 16.7v2"></path></svg>
+                Secured filling method: encrypted browser autofill fields for card details.
+              </p>
+              <p class="form-intro">Enter your Visa or Mastercard details below. Secure browser autofill is supported.</p>
+
+              <label for="card-name">Cardholder Name</label>
+              <input id="card-name" name="cardName" type="text" autocomplete="cc-name" placeholder="Name on card" required />
+
+              <label for="card-number">Card Number</label>
+              <input
+                id="card-number"
+                name="cardNumber"
+                type="text"
+                inputmode="numeric"
+                autocomplete="cc-number"
+                placeholder="1234 5678 9012 3456"
+                maxlength="19"
+                spellcheck="false"
+                required
+              />
+              <div class="card-detection-row">
+                <div class="card-brand-logos" aria-label="Supported cards">
+                  <span class="card-logo card-logo-visa" data-card-logo="visa">VISA</span>
+                  <span class="card-logo card-logo-mastercard" data-card-logo="mastercard">
+                    <span class="mc-disc mc-left" aria-hidden="true"></span>
+                    <span class="mc-disc mc-right" aria-hidden="true"></span>
+                    <span class="mc-text">Mastercard</span>
+                  </span>
+                </div>
+                <p class="card-brand-hint" id="card-brand-hint" aria-live="polite">Card type will appear as you type.</p>
+              </div>
+
+              <div class="card-input-grid">
+                <div>
+                  <label for="card-expiry">Expiry</label>
+                  <input
+                    id="card-expiry"
+                    name="cardExpiry"
+                    type="text"
+                    inputmode="numeric"
+                    autocomplete="cc-exp"
+                    placeholder="MM/YY"
+                    maxlength="5"
+                    spellcheck="false"
+                    required
+                  />
+                </div>
+                <div>
+                  <label for="card-cvc">Security Code</label>
+                  <input
+                    id="card-cvc"
+                    name="cardCvc"
+                    type="text"
+                    inputmode="numeric"
+                    autocomplete="cc-csc"
+                    placeholder="CVC"
+                    maxlength="4"
+                    spellcheck="false"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-pay-now" type="button" data-unset-alert data-alert-message="Payment Is Not Integrated Yet Since It Is A Demo Project.">Pay Now</button>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <a class="footer-brand" href="index.html" aria-label="Encouragement by Empowerment home">
+          <img class="footer-logo" src="logo.jpeg" alt="Encouragement by Empowerment logo" />
+          <span class="footer-brand-text-wrap">
+            <span class="footer-brand-name">Encouragement by Empowerment</span>
+            <span class="footer-brand-tag">Empowering lives through encouragement</span>
+          </span>
+        </a>
+
+        <div class="footer-links-group">
+          <a class="footer-link" href="mailto:hello@encouragementbyempowerment.org" aria-label="Send us an email" data-unset-alert data-alert-message="Not Connected Yet, Since It Is A Demo Project">
+            <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 8l9 6 9-6"></path></svg>
+            <span>hello@encouragementbyempowerment.org</span>
+          </a>
+          <div class="footer-social" aria-label="Social links">
+            <a class="footer-link footer-social-link" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" data-unset-alert data-alert-message="Not Connected Yet, Since It Is A Demo Project">
+              <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"></rect><circle cx="12" cy="12" r="3.6"></circle><circle cx="17.4" cy="6.6" r="1"></circle></svg>
+              <span>Instagram</span>
+            </a>
+            <a class="footer-link footer-social-link" href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" data-unset-alert data-alert-message="Not Connected Yet, Since It Is A Demo Project">
+              <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 8h2.6V4.8h-2.9c-3.4 0-5.1 2-5.1 5.3V13H6v3.3h2.8V20h3.6v-3.7h3l.5-3.3h-3.5V10.6c0-1.2.5-1.9 1.8-1.9z"></path></svg>
+              <span>Facebook</span>
+            </a>
+            <a class="footer-link footer-social-link" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" data-unset-alert data-alert-message="Not Connected Yet, Since It Is A Demo Project">
+              <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="9" width="3.2" height="11"></rect><circle cx="5.6" cy="5.8" r="1.8"></circle><path d="M10 9h3.1v1.6c.6-1.1 1.9-1.9 3.7-1.9 3 0 4.2 1.9 4.2 5v6.3h-3.3v-5.6c0-1.7-.6-2.7-2.1-2.7-1.4 0-2.3 1-2.3 2.7v5.6H10z"></path></svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+
+        <p class="footer-copy">&copy; 2026 Encouragement by Empowerment. All rights reserved.</p>
+      </div>
+    </footer>
+<script src="script.js"></script>
+  </body>
+</html>
