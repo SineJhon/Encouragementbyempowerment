@@ -1,0 +1,21 @@
+{
+  "name": "Encouragement by Empowerment",
+  "short_name": "EbE",
+  "description": "Empowering lives through trusted mentorship, community programs, and practical support.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFAF9",
+  "theme_color": "#2563EB",
+  "icons": [
+    {
+      "src": "logo.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "logo.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

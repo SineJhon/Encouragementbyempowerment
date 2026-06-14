@@ -1,0 +1,77 @@
+[
+  {
+    "slug": "summer-outreach",
+    "label": "Impact Report",
+    "title": "Summer Outreach Program Reaches New Milestone",
+    "date": "June 15, 2026",
+    "readTime": "4 min read",
+    "image": "assets/images/photo-1529156069898-49953e39b3ac.jpg",
+    "alt": "Community outreach event",
+    "intro": "This summer, Encouragement by Empowerment reached a new milestone by connecting more than 200 community members with practical support, trusted referrals, and program pathways.",
+    "sections": [
+      {
+        "heading": "Meeting People Where They Are",
+        "body": "The outreach program brought together local service providers, volunteer mentors, family advocates, and community leaders in accessible neighborhood settings. Each gathering was designed to feel welcoming and useful, with clear next steps for people seeking support."
+      },
+      {
+        "heading": "What Changed This Season",
+        "body": "Families were connected to resource navigation, youth were introduced to mentorship opportunities, and community partners helped identify urgent needs earlier. The strongest outcome was not only the number of people reached, but the quality of follow-up that happened after the events ended."
+      },
+      {
+        "heading": "Looking Ahead",
+        "body": "The team is using this milestone to improve referral pathways, expand volunteer training, and plan smaller recurring outreach days that keep support available throughout the year."
+      }
+    ],
+    "stats": ["200+ community members reached", "18 local partner conversations", "42 follow-up referrals"]
+  },
+  {
+    "slug": "mentorship-cohort",
+    "label": "Mentorship",
+    "title": "New Mentorship Cohort Launches",
+    "date": "May 28, 2026",
+    "readTime": "3 min read",
+    "image": "assets/images/photo-1571260899304-425eee4c7efc.jpg",
+    "alt": "Youth mentorship session",
+    "intro": "Twenty new mentor-mentee pairs have begun a guided journey focused on encouragement, academic confidence, and personal goal-setting.",
+    "sections": [
+      {
+        "heading": "A Strong Start",
+        "body": "The new cohort opened with orientation sessions for mentors, youth, and families. Participants reviewed expectations, communication rhythms, safety practices, and the shared purpose behind the program."
+      },
+      {
+        "heading": "More Than Weekly Check-Ins",
+        "body": "Each match receives a structured support plan with conversation prompts, progress goals, and staff check-ins. The goal is to build consistency while leaving room for each young person's voice, interests, and pace."
+      },
+      {
+        "heading": "Building Confidence Over Time",
+        "body": "This cohort will focus on school success, leadership habits, and practical life skills. Staff will track progress through participant reflections, family feedback, and mentor reports."
+      }
+    ],
+    "stats": ["20 new mentor pairs", "6 orientation sessions", "12-week first milestone"]
+  },
+  {
+    "slug": "volunteer-appreciation",
+    "label": "Volunteers",
+    "title": "Volunteer Appreciation Event",
+    "date": "May 10, 2026",
+    "readTime": "3 min read",
+    "image": "assets/images/photo-1521791136064-7986c2920216.jpg",
+    "alt": "Volunteer appreciation gathering",
+    "intro": "Encouragement by Empowerment celebrated the dedicated volunteers whose steady presence helped expand programs and deepen community care this year.",
+    "sections": [
+      {
+        "heading": "Honoring Steady Service",
+        "body": "The appreciation event recognized mentors, administrative helpers, event volunteers, and outreach supporters. Their work often happens quietly, but it shapes the trust and consistency that community programs depend on."
+      },
+      {
+        "heading": "The Impact Behind the Hours",
+        "body": "Volunteers helped families navigate resources, supported youth through mentorship, prepared community events, and brought care into everyday details. Their commitment created more capacity for the organization to respond well."
+      },
+      {
+        "heading": "A Growing Volunteer Community",
+        "body": "The next season will include additional training, role-specific support circles, and new volunteer pathways for people who want flexible or remote ways to contribute."
+      }
+    ],
+    "stats": ["75+ active volunteers", "4 service role groups", "1 shared mission"]
+  }
+]

@@ -1563,8 +1563,9 @@ select:focus {
 
 .reveal {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 620ms ease, transform 620ms ease;
+  transform: translateY(24px);
+  transition: opacity 640ms cubic-bezier(0.23, 1, 0.32, 1), transform 640ms cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: opacity, transform;
 }
 
 .reveal.visible {

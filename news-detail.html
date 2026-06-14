@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Read the latest Encouragement by Empowerment story.">
+  <title>News Detail | Encouragement by Empowerment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <style>
+    .article-shell { max-width: 1040px; margin-inline: auto; }
+    .article-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 0.82fr); gap: var(--space-xl); align-items: center; margin-bottom: var(--space-xl); }
+    .article-hero img { aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); }
+    .article-meta { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-bottom: var(--space-md); color: var(--text-muted); font-size: var(--text-sm); }
+    .article-intro { font-size: var(--text-lg); line-height: 1.75; }
+    .article-grid { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: var(--space-xl); align-items: start; }
+    .article-card { padding: var(--space-xl); border: 1px solid var(--border); border-radius: var(--radius-xl); background: var(--bg-surface); box-shadow: var(--shadow-sm); }
+    .article-card section + section { margin-top: var(--space-xl); padding-top: var(--space-xl); border-top: 1px solid var(--border); }
+    .article-card h2 { font-size: var(--text-2xl); margin-bottom: var(--space-sm); }
+    .article-card p { line-height: 1.82; }
+    .stat-stack { display: grid; gap: var(--space-sm); position: sticky; top: 110px; }
+    .story-stat { padding: var(--space-md); border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--gradient-card); font-family: var(--font-display); font-weight: 800; color: var(--text-primary); }
+    .article-error { padding: var(--space-xl); border: 1px solid rgba(239,68,68,0.25); border-radius: var(--radius-lg); background: rgba(239,68,68,0.08); }
+    @media (max-width: 900px) { .article-hero, .article-grid { grid-template-columns: 1fr; } .stat-stack { position: static; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header" role="banner">
+    <div class="container nav-wrap">
+      <a href="index.html" class="nav-brand"><img src="logo.jpeg" alt="" width="36" height="36"><span>Encouragement by Empowerment</span></a>
+      <nav aria-label="Primary navigation"><ul id="nav-links" class="nav-links">
+        <li><a href="index.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</a></li>
+        <li><a href="about.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>About</a></li>
+        <li><a href="programs.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Programs</a></li>
+        <li><a href="involved.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>Get Involved</a></li>
+        <li><a href="events.html" class="active"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Events</a></li>
+        <li><a href="contact.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Contact</a></li>
+      </ul></nav>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode"><svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg></button>
+        <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation menu"><span></span><span></span><span></span></button>
+        <a href="donate.html" class="btn btn-accent btn-donate-glow">Give Today</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="section">
+      <div class="container article-shell" id="article-root">
+        <div class="article-error">Loading story...</div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+  const fallbackStories = [
+    {
+      slug: 'summer-outreach',
+      label: 'Impact Report',
+      title: 'Summer Outreach Program Reaches New Milestone',
+      date: 'June 15, 2026',
+      readTime: '4 min read',
+      image: 'assets/images/photo-1529156069898-49953e39b3ac.jpg',
+      alt: 'Community outreach event',
+      intro: 'This summer, Encouragement by Empowerment reached a new milestone by connecting more than 200 community members with practical support, trusted referrals, and program pathways.',
+      sections: [
+        { heading: 'Meeting People Where They Are', body: 'The outreach program brought together local service providers, volunteer mentors, family advocates, and community leaders in accessible neighborhood settings.' },
+        { heading: 'What Changed This Season', body: 'Families were connected to resource navigation, youth were introduced to mentorship opportunities, and community partners helped identify urgent needs earlier.' },
+        { heading: 'Looking Ahead', body: 'The team is using this milestone to improve referral pathways, expand volunteer training, and plan recurring outreach days throughout the year.' }
+      ],
+      stats: ['200+ community members reached', '18 local partner conversations', '42 follow-up referrals']
+    },
+    {
+      slug: 'mentorship-cohort',
+      label: 'Mentorship',
+      title: 'New Mentorship Cohort Launches',
+      date: 'May 28, 2026',
+      readTime: '3 min read',
+      image: 'assets/images/photo-1571260899304-425eee4c7efc.jpg',
+      alt: 'Youth mentorship session',
+      intro: 'Twenty new mentor-mentee pairs have begun a guided journey focused on encouragement, academic confidence, and personal goal-setting.',
+      sections: [
+        { heading: 'A Strong Start', body: 'The new cohort opened with orientation sessions for mentors, youth, and families.' },
+        { heading: 'More Than Weekly Check-Ins', body: 'Each match receives a structured support plan with conversation prompts, progress goals, and staff check-ins.' },
+        { heading: 'Building Confidence Over Time', body: 'This cohort will focus on school success, leadership habits, and practical life skills.' }
+      ],
+      stats: ['20 new mentor pairs', '6 orientation sessions', '12-week first milestone']
+    },
+    {
+      slug: 'volunteer-appreciation',
+      label: 'Volunteers',
+      title: 'Volunteer Appreciation Event',
+      date: 'May 10, 2026',
+      readTime: '3 min read',
+      image: 'assets/images/photo-1521791136064-7986c2920216.jpg',
+      alt: 'Volunteer appreciation gathering',
+      intro: 'Encouragement by Empowerment celebrated the dedicated volunteers whose steady presence helped expand programs and deepen community care this year.',
+      sections: [
+        { heading: 'Honoring Steady Service', body: 'The appreciation event recognized mentors, administrative helpers, event volunteers, and outreach supporters.' },
+        { heading: 'The Impact Behind the Hours', body: 'Volunteers helped families navigate resources, supported youth through mentorship, prepared community events, and brought care into everyday details.' },
+        { heading: 'A Growing Volunteer Community', body: 'The next season will include additional training, role-specific support circles, and new volunteer pathways.' }
+      ],
+      stats: ['75+ active volunteers', '4 service role groups', '1 shared mission']
+    }
+  ];
+
+  function renderStory(story) {
+    const root = document.getElementById('article-root');
+    document.title = story.title + ' | Encouragement by Empowerment';
+    root.innerHTML = `
+      <a href="events.html" class="btn btn-ghost btn-sm" style="margin-bottom: var(--space-lg);">Back to Events</a>
+      <div class="article-hero fade-up">
+        <div>
+          <span class="eyebrow">${story.label}</span>
+          <h1>${story.title}</h1>
+          <div class="article-meta"><span>${story.date}</span><span>${story.readTime}</span></div>
+          <p class="article-intro">${story.intro}</p>
+        </div>
+        <img src="${story.image}" alt="${story.alt}" loading="lazy">
+      </div>
+      <div class="article-grid fade-up">
+        <article class="article-card">
+          ${story.sections.map(section => `<section><h2>${section.heading}</h2><p>${section.body}</p></section>`).join('')}
+        </article>
+        <aside class="stat-stack" aria-label="Story highlights">
+          ${story.stats.map(stat => `<div class="story-stat">${stat}</div>`).join('')}
+          <a href="contact.html" class="btn btn-primary" style="width: 100%;">Contact Our Team</a>
+        </aside>
+      </div>
+    `;
+  }
+
+  async function loadStory() {
+    const slug = new URLSearchParams(window.location.search).get('story') || 'summer-outreach';
+    try {
+      const response = await fetch('assets/data/news.json');
+      if (!response.ok) throw new Error('News data unavailable');
+      const stories = await response.json();
+      const story = stories.find(item => item.slug === slug) || stories[0];
+      renderStory(story);
+    } catch (error) {
+      const story = fallbackStories.find(item => item.slug === slug) || fallbackStories[0];
+      renderStory(story);
+    }
+  }
+  loadStory();
+  </script>
+  <script src="assets/js/theme.js" defer></script>
+  <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/animations.js" defer></script>
+</body>
+</html>

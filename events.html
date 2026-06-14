@@ -1,186 +1,297 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Stay updated with community events, nonprofit announcements, and impact news from Encouragement by Empowerment."
-    />
-    <title>Events &amp; News | Encouragement by Empowerment</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" type="image/jpeg" href="logo.jpeg" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
-    <header class="site-header page-header">
-      <div class="container nav-wrap">
-<button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
-          <span></span><span></span><span></span>
-        </button>
-        <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
-          <ul>
-            <li><a href="index.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5L12 4l9 7.5"></path><path d="M6.5 10.8V20h11V10.8"></path><path d="M10 20v-5h4v5"></path></svg><span>Home</span></a></li>
-            <li><a href="about.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5h6a3 3 0 0 1 3 3V20a3 3 0 0 0-3-3h-6z"></path><path d="M20.5 6.5h-6a3 3 0 0 0-3 3V20a3 3 0 0 1 3-3h6z"></path><path d="M12 9.5v9.8"></path></svg><span>About Us</span></a></li>
-            <li><a href="programs.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="6" rx="1.5"></rect><rect x="3.5" y="13.5" width="8" height="6" rx="1.5"></rect><rect x="12.5" y="13.5" width="8" height="6" rx="1.5"></rect></svg><span>Programs</span></a></li>
-            <li><a href="involved.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.8 14.5h5.2l2.2 2.2a2 2 0 0 0 2.8 0l1-1"></path><path d="M21.2 14.5H16l-2.2 2.2a2 2 0 0 1-2.8 0l-1-1"></path><path d="M7 14.5l2.3-3.3a2 2 0 0 1 3.1-.2l2.6 2.7"></path></svg><span>Get Involved</span></a></li>
-            <li><a class="nav-current" href="events.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2"></rect><path d="M8 8h8"></path><path d="M8 11h8"></path><path d="M8 14h5"></path><path d="M16.5 4.5v15"></path></svg><span>Events &amp; News</span></a></li>
-            <li><a href="contact.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.2L20.5 4.5 14 20l-2.9-6-8.1-2.8z"></path><path d="M11.1 14l9.4-9.5"></path></svg><span>Contact</span></a></li>
-</ul>
-        </nav>
-        <a class="nav-donate nav-donate-cta" href="donate.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19.2l-6.7-6.4a4.2 4.2 0 0 1 5.9-6l.8.8.8-.8a4.2 4.2 0 0 1 5.9 6z"></path><circle cx="18.5" cy="17.8" r="3"></circle><path d="M18.5 16.3v3"></path><path d="M17.5 17.2h2"></path></svg><span>Donate</span></a>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stay updated with Encouragement by Empowerment events, news, and community announcements.">
+  <meta property="og:title" content="Events & News | Encouragement by Empowerment">
+  <meta property="og:description" content="Upcoming events and latest news from our community.">
+  <title>Events & News | Encouragement by Empowerment</title>
+  <link rel="canonical" href="https://sinejhon.github.io/Encouragementbyempowerment/events">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <style>
+    .event-list { display: flex; flex-direction: column; gap: var(--space-md); }
+    .event-card { display: grid; grid-template-columns: auto 1fr; gap: var(--space-lg); padding: var(--space-lg); border-radius: var(--radius-lg); border: 1px solid var(--border); background: var(--bg-surface); transition: all 0.2s ease; align-items: center; }
+    .event-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .event-date { text-align: center; min-width: 80px; padding: var(--space-sm); border-radius: var(--radius-md); background: var(--gradient-card); }
+    .event-day { font-family: var(--font-display); font-size: var(--text-3xl); font-weight: 800; color: var(--color-primary); line-height: 1; }
+    .event-month { font-size: var(--text-xs); text-transform: uppercase; color: var(--text-secondary); font-weight: 600; letter-spacing: 0.05em; }
+    .event-info h3 { margin-bottom: var(--space-xs); font-size: var(--text-lg); }
+    .event-meta { font-size: var(--text-xs); color: var(--text-muted); display: flex; gap: var(--space-md); flex-wrap: wrap; margin-bottom: var(--space-sm); }
+    .event-badge { display: inline-flex; margin-bottom: var(--space-xs); font-size: var(--text-xs); padding: 0.15rem 0.5rem; border-radius: var(--radius-full); font-weight: 700; }
+    .event-badge-inperson { background: rgba(37,99,235,0.1); color: var(--color-primary); }
+    .event-badge-virtual { background: rgba(245,158,11,0.1); color: var(--color-accent); }
+    .event-actions { display: flex; gap: var(--space-sm); flex-wrap: wrap; margin-top: var(--space-sm); }
+    .news-grid { display: grid; gap: var(--space-lg); grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; }
+    .news-card { min-height: 100%; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); background: var(--bg-surface); transition: all 0.2s ease; display: flex; flex-direction: column; }
+    .news-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .news-card img { aspect-ratio: 16/10; object-fit: cover; flex-shrink: 0; }
+    .news-body { padding: var(--space-md); display: flex; flex-direction: column; flex: 1; }
+    .news-body h4 { font-size: var(--text-base); margin-bottom: var(--space-xs); }
+    .news-meta { font-size: var(--text-xs); color: var(--text-muted); display: flex; gap: var(--space-sm); margin-bottom: var(--space-sm); }
+    .news-body .btn { margin-top: auto; align-self: flex-start; }
+    .event-modal-overlay { position: fixed; inset: 0; z-index: 9998; display: flex; align-items: center; justify-content: center; padding: var(--space-lg); background: rgba(8,13,23,0.68); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); opacity: 0; pointer-events: none; transition: opacity 0.25s ease; overflow-y: auto; }
+    .event-modal-overlay.visible { opacity: 1; pointer-events: auto; }
+    .event-modal { width: min(720px, 100%); max-height: 90dvh; overflow-y: auto; border: 1px solid var(--border); border-radius: var(--radius-xl); background: var(--bg-surface); box-shadow: var(--shadow-xl); transform: translateY(18px) scale(0.96); transition: transform 0.3s var(--ease-spring); }
+    .event-modal-overlay.visible .event-modal { transform: translateY(0) scale(1); }
+    .event-modal-header { position: relative; padding: var(--space-xl); color: white; background: var(--gradient-hero); }
+    .event-modal-header h3 { color: white; margin-bottom: var(--space-sm); }
+    .event-modal-header p { color: rgba(255,255,255,0.86); margin-bottom: 0; }
+    .event-modal-close { position: absolute; top: var(--space-md); right: var(--space-md); width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.28); border-radius: 50%; background: rgba(255,255,255,0.12); color: white; cursor: pointer; font-size: 1.25rem; }
+    .event-modal-body { padding: var(--space-xl); }
+    .event-detail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-sm); margin-bottom: var(--space-lg); }
+    .event-detail { padding: var(--space-md); border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--gradient-card); }
+    .event-detail span { display: block; color: var(--text-muted); font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; margin-bottom: 0.25rem; }
+    .event-detail strong { color: var(--text-primary); font-size: var(--text-sm); }
+    .phone-row { display: grid; grid-template-columns: minmax(118px, 0.38fr) 1fr; gap: var(--space-sm); }
+    .modal-success { display: none; padding: var(--space-lg); border: 1px solid rgba(16,185,129,0.28); border-radius: var(--radius-md); background: rgba(16,185,129,0.1); color: #059669; font-weight: 700; text-align: center; margin-bottom: var(--space-md); }
+    @media (max-width: 1024px) { .news-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) { .event-card { grid-template-columns: 1fr; text-align: center; } .event-date { display: inline-block; justify-self: center; } .event-meta, .event-actions { justify-content: center; } .news-grid, .event-detail-grid, .phone-row { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div id="loading-bar" class="loading-bar"></div>
+  <div id="toast-container" class="toast-container"></div>
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg></button>
+  <header class="site-header" role="banner">
+    <div class="container nav-wrap">
+      <a href="index.html" class="nav-brand"><img src="logo.jpeg" alt="" width="36" height="36"><span>Encouragement by Empowerment</span></a>
+      <nav aria-label="Primary navigation"><ul id="nav-links" class="nav-links">
+        <li><a href="index.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</a></li>
+        <li><a href="about.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>About</a></li>
+        <li><a href="programs.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Programs</a></li>
+        <li><a href="involved.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>Get Involved</a></li>
+        <li><a href="events.html" class="active"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Events</a></li>
+        <li><a href="contact.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Contact</a></li>
+      </ul></nav>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode"><svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg></button>
+        <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation menu"><span></span><span></span><span></span></button>
+        <a href="donate.html" class="btn btn-accent btn-donate-glow">Give Today - Change a Life</a>
       </div>
-      <section class="page-hero" aria-labelledby="events-title">
-        <div class="container reveal">
-          <p class="hero-kicker">Community Updates</p>
-          <h1 id="events-title">Events and News</h1>
-          <p>Join upcoming gatherings and stay informed on milestones and announcements.</p>
-        </div>
-      </section>
-    </header>
+    </div>
+  </header>
 
-    <main id="main-content">
-      <section class="section">
-        <div class="container">
-          <div class="section-heading reveal">
-            <h2>Upcoming Events</h2>
-            <p>Save the dates and participate in upcoming community-focused opportunities.</p>
-          </div>
-          <div class="program-grid scroll-feed">
-            <article class="program-card reveal interactive-item">
-              <img src="assets/images/photo-1511578314322-379afb476865.jpg" alt="Community event with attendees networking" loading="lazy" />
-              <div>
-                <h3>Spring Community Encouragement Fair</h3>
-                <p>April 18, 2026 | Family resources, youth activities, and volunteer sign-up stations.</p>
-                <a href="event-spring-fair.html" class="demo-card-link" data-demo-link data-demo-message="This event page is not live yet because this is a demo project.">Open Event Article</a>
-              </div>
-            </article>
-            <article class="program-card reveal delay-1 interactive-item">
-              <img src="assets/images/photo-1475721027785-f74eccf877e2.jpg" alt="Workshop session with notebooks on table" loading="lazy" />
-              <div>
-                <h3>Mentor Training Day</h3>
-                <p>May 6, 2026 | Equipping volunteer mentors with practical coaching tools.</p>
-                <a href="event-mentor-training.html" class="demo-card-link" data-demo-link data-demo-message="Mentor training article is not available yet. This is a demo project.">Open Event Article</a>
-              </div>
-            </article>
-            <article class="program-card reveal interactive-item">
-              <img src="assets/images/photo-1552664730-d307ca884978.jpg" alt="Youth leadership workshop in session" loading="lazy" />
-              <div>
-                <h3>Youth Leadership Workshop</h3>
-                <p>June 14, 2026 | Confidence-building sessions and peer mentoring activities.</p>
-                <a href="event-youth-leadership.html" class="demo-card-link" data-demo-link data-demo-message="Youth leadership event page is coming soon. This is a demo project.">Open Event Article</a>
-              </div>
-            </article>
-            <article class="program-card reveal delay-1 interactive-item">
-              <img src="assets/images/photo-1515187029135-18ee286d815b.jpg" alt="Community volunteers organizing resources" loading="lazy" />
-              <div>
-                <h3>Neighborhood Resource Day</h3>
-                <p>July 2, 2026 | Resource distribution, service referrals, and family support connections.</p>
-                <a href="event-resource-day.html" class="demo-card-link" data-demo-link data-demo-message="Neighborhood resource day article is not set yet because this is a demo project.">Open Event Article</a>
-              </div>
-            </article>
-          </div>
-          <div class="section-cta reveal delay-2">
-            <a
-              class="btn btn-secondary btn-see-more"
-              href="events-archive.html"
-              data-demo-link
-              data-demo-message="Not Set Yet Cause This Is A Demo Project"
-            >
-              See More Events
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section mission">
-        <div class="container">
-          <div class="section-heading reveal">
-            <h2>Recent News and Announcements</h2>
-            <p>Latest updates from our programs, partnerships, and impact milestones.</p>
-          </div>
-          <div class="news-list scroll-feed">
-            <article class="highlight-card reveal interactive-item">
-              <h3>New School Partnership Announced</h3>
-              <p>We launched a mentorship collaboration with two local schools to support students weekly.</p>
-              <a href="news-school-partnership.html" class="demo-card-link" data-demo-link data-demo-message="This news article is not available yet because this is a demo project.">Open News Article</a>
-            </article>
-            <article class="highlight-card reveal delay-1 interactive-item">
-              <h3>Volunteer Milestone Reached</h3>
-              <p>Our team welcomed its 200th volunteer, expanding support hours across all initiatives.</p>
-              <a href="news-volunteer-milestone.html" class="demo-card-link" data-demo-link data-demo-message="Volunteer milestone article is coming soon. This is a demo project.">Open News Article</a>
-            </article>
-            <article class="highlight-card reveal delay-2 interactive-item">
-              <h3>Quarterly Impact Report Published</h3>
-              <p>New report highlights measurable growth in family engagement and program outcomes.</p>
-              <a href="news-impact-report.html" class="demo-card-link" data-demo-link data-demo-message="Impact report article is not set yet because this is a demo project.">Open News Article</a>
-            </article>
-            <article class="highlight-card reveal interactive-item">
-              <h3>Community Team Expansion</h3>
-              <p>Two new outreach teams are preparing to serve additional neighborhoods this quarter.</p>
-              <a href="news-team-expansion.html" class="demo-card-link" data-demo-link data-demo-message="Community team expansion article is not live yet. This is a demo project.">Open News Article</a>
-            </article>
-            <article class="highlight-card reveal delay-1 interactive-item">
-              <h3>Summer Service Calendar Preview</h3>
-              <p>Preview dates for summer mentoring sessions, family support clinics, and partner outreach.</p>
-              <a href="news-summer-calendar.html" class="demo-card-link" data-demo-link data-demo-message="Summer calendar article is coming soon because this is a demo project.">Open News Article</a>
-            </article>
-          </div>
-          <div class="section-cta reveal delay-2">
-            <a
-              class="btn btn-secondary btn-see-more"
-              href="news-archive.html"
-              data-demo-link
-              data-demo-message="Not Set Yet Cause This Is A Demo Project"
-            >
-              See More News
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer class="site-footer">
-      <div class="container footer-wrap">
-        <a class="footer-brand" href="index.html" aria-label="Encouragement by Empowerment home">
-          <img class="footer-logo" src="logo.jpeg" alt="Encouragement by Empowerment logo" />
-          <span class="footer-brand-text-wrap">
-            <span class="footer-brand-name">Encouragement by Empowerment</span>
-            <span class="footer-brand-tag">Empowering lives through encouragement</span>
-          </span>
-        </a>
-
-        <div class="footer-links-group">
-          <a class="footer-link" href="mailto:hello@encouragementbyempowerment.org" aria-label="Send us an email" data-unset-alert data-alert-message="Not Connected Yet, Since It Is A Demo Project">
-            <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 8l9 6 9-6"></path></svg>
-            <span>hello@encouragementbyempowerment.org</span>
-          </a>
-          <div class="footer-social" aria-label="Social links">
-            <a class="footer-link footer-social-link" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" data-unset-alert data-alert-message="Not Connected Yet, Since It Is A Demo Project">
-              <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"></rect><circle cx="12" cy="12" r="3.6"></circle><circle cx="17.4" cy="6.6" r="1"></circle></svg>
-              <span>Instagram</span>
-            </a>
-            <a class="footer-link footer-social-link" href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" data-unset-alert data-alert-message="Not Connected Yet, Since It Is A Demo Project">
-              <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 8h2.6V4.8h-2.9c-3.4 0-5.1 2-5.1 5.3V13H6v3.3h2.8V20h3.6v-3.7h3l.5-3.3h-3.5V10.6c0-1.2.5-1.9 1.8-1.9z"></path></svg>
-              <span>Facebook</span>
-            </a>
-            <a class="footer-link footer-social-link" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" data-unset-alert data-alert-message="Not Connected Yet, Since It Is A Demo Project">
-              <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="9" width="3.2" height="11"></rect><circle cx="5.6" cy="5.8" r="1.8"></circle><path d="M10 9h3.1v1.6c.6-1.1 1.9-1.9 3.7-1.9 3 0 4.2 1.9 4.2 5v6.3h-3.3v-5.6c0-1.7-.6-2.7-2.1-2.7-1.4 0-2.3 1-2.3 2.7v5.6H10z"></path></svg>
-              <span>LinkedIn</span>
-            </a>
-          </div>
-        </div>
-
-        <p class="footer-copy">&copy; 2026 Encouragement by Empowerment. All rights reserved.</p>
+  <main id="main-content">
+    <section class="page-hero fade-up">
+      <div class="container">
+        <span class="eyebrow">Stay Connected</span>
+        <h1>Events & News</h1>
+        <p>Join us for upcoming events, workshops, and community gatherings. Stay informed about our latest impact.</p>
       </div>
-    </footer>
-<script src="script.js"></script>
-  </body>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading fade-up">
+          <span class="eyebrow">Upcoming</span>
+          <h2>Events Calendar</h2>
+        </div>
+        <div class="event-list fade-up">
+          <article class="event-card">
+            <div class="event-date"><div class="event-day">15</div><div class="event-month">Aug</div></div>
+            <div class="event-info"><span class="event-badge event-badge-inperson">In Person</span><h3>Community Resource Fair</h3><div class="event-meta"><span>Location: Downtown Community Center</span><span>Time: 10:00 AM - 3:00 PM</span></div><p style="font-size: var(--text-sm);">Connect with local service providers, access resources, and learn about our programs at this free community event.</p><div class="event-actions"><button type="button" class="btn btn-primary btn-sm" onclick="openEventModal(0)">Register</button></div></div>
+          </article>
+          <article class="event-card">
+            <div class="event-date"><div class="event-day">22</div><div class="event-month">Aug</div></div>
+            <div class="event-info"><span class="event-badge event-badge-virtual">Virtual</span><h3>Parent Support Workshop</h3><div class="event-meta"><span>Location: Zoom Webinar</span><span>Time: 6:30 PM - 8:00 PM</span></div><p style="font-size: var(--text-sm);">A free workshop for parents navigating challenges with their teens. Practical strategies and peer support.</p><div class="event-actions"><button type="button" class="btn btn-primary btn-sm" onclick="openEventModal(1)">Register</button></div></div>
+          </article>
+          <article class="event-card">
+            <div class="event-date"><div class="event-day">05</div><div class="event-month">Sep</div></div>
+            <div class="event-info"><span class="event-badge event-badge-inperson">In Person</span><h3>Youth Leadership Summit</h3><div class="event-meta"><span>Location: Eastside Youth Center</span><span>Time: 9:00 AM - 4:00 PM</span></div><p style="font-size: var(--text-sm);">A day of leadership workshops, team-building activities, and mentorship for youth ages 14-18.</p><div class="event-actions"><button type="button" class="btn btn-primary btn-sm" onclick="openEventModal(2)">Learn More</button></div></div>
+          </article>
+          <article class="event-card">
+            <div class="event-date"><div class="event-day">12</div><div class="event-month">Sep</div></div>
+            <div class="event-info"><span class="event-badge event-badge-virtual">Virtual</span><h3>Volunteer Orientation</h3><div class="event-meta"><span>Location: Zoom</span><span>Time: 5:00 PM - 6:30 PM</span></div><p style="font-size: var(--text-sm);">New to volunteering with us? Join this session to learn about our mission, programs, and how you can get involved.</p><div class="event-actions"><button type="button" class="btn btn-primary btn-sm" onclick="openEventModal(3)">Sign Up</button></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--bg-elevated);">
+      <div class="container">
+        <div class="section-heading fade-up">
+          <span class="eyebrow">Stories</span>
+          <h2>Latest News & Updates</h2>
+        </div>
+        <div class="news-grid fade-up">
+          <article class="news-card">
+            <img src="assets/images/photo-1529156069898-49953e39b3ac.jpg" alt="Community outreach event" loading="lazy" width="800" height="500">
+            <div class="news-body"><span class="pill pill-primary" style="margin-bottom: var(--space-sm);">Impact Report</span><h4>Summer Outreach Program Reaches New Milestone</h4><div class="news-meta"><span>June 15, 2026</span><span>4 min read</span></div><p style="font-size: var(--text-sm);">A season of outreach connected neighbors with mentorship, family support, and practical resources through partner-led community events.</p><a href="news-detail.html?story=summer-outreach" class="btn btn-primary btn-sm">Read More</a></div>
+          </article>
+          <article class="news-card">
+            <img src="assets/images/photo-1571260899304-425eee4c7efc.jpg" alt="Youth mentorship success" loading="lazy" width="400" height="250">
+            <div class="news-body"><span class="pill pill-primary" style="margin-bottom: var(--space-sm);">Mentorship</span><h4>New Mentorship Cohort Launches</h4><div class="news-meta"><span>May 28, 2026</span><span>3 min read</span></div><p style="font-size: var(--text-sm);">Twenty new mentor pairs begin a guided journey focused on encouragement, goal-setting, school success, and trusted support.</p><a href="news-detail.html?story=mentorship-cohort" class="btn btn-primary btn-sm">Read More</a></div>
+          </article>
+          <article class="news-card">
+            <img src="assets/images/photo-1521791136064-7986c2920216.jpg" alt="Volunteer appreciation" loading="lazy" width="400" height="250">
+            <div class="news-body"><span class="pill pill-primary" style="margin-bottom: var(--space-sm);">Volunteers</span><h4>Volunteer Appreciation Event</h4><div class="news-meta"><span>May 10, 2026</span><span>3 min read</span></div><p style="font-size: var(--text-sm);">We celebrated the dedicated volunteers whose steady presence helped expand programs and deepen community care this year.</p><a href="news-detail.html?story=volunteer-appreciation" class="btn btn-primary btn-sm">Read More</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="event-modal-overlay" id="event-modal-overlay" aria-hidden="true">
+    <div class="event-modal" role="dialog" aria-modal="true" aria-labelledby="event-modal-title">
+      <div class="event-modal-header">
+        <button class="event-modal-close" id="event-modal-close" aria-label="Close event modal">&times;</button>
+        <span class="event-badge event-badge-inperson" id="event-modal-type">Event</span>
+        <h3 id="event-modal-title"></h3>
+        <p id="event-modal-description"></p>
+      </div>
+      <div class="event-modal-body">
+        <div class="event-detail-grid">
+          <div class="event-detail"><span>Date</span><strong id="event-modal-date"></strong></div>
+          <div class="event-detail"><span>Time</span><strong id="event-modal-time"></strong></div>
+          <div class="event-detail"><span>Location</span><strong id="event-modal-location"></strong></div>
+        </div>
+        <p class="program-modal-section-title" style="margin-bottom: var(--space-sm);">What to expect</p>
+        <ul id="event-modal-list" style="margin-bottom: var(--space-lg);"></ul>
+        <div class="modal-success" id="event-modal-success">Successfully sent. Thank you, we will follow up with event details soon.</div>
+        <form id="event-modal-form">
+          <div class="form-group"><label class="form-label" for="event-name">Full Name</label><input id="event-name" class="form-input" type="text" required minlength="2" placeholder="Your full name"></div>
+          <div class="form-group"><label class="form-label" for="event-email">Email</label><input id="event-email" class="form-input" type="email" required placeholder="your@email.com"></div>
+          <div class="form-group"><label class="form-label" for="event-phone">Phone</label><div class="phone-row"><select id="event-country" class="form-select" required aria-label="Country code"><option value="+1">US +1</option><option value="+44">UK +44</option><option value="+254">KE +254</option><option value="+234">NG +234</option><option value="+27">ZA +27</option><option value="+91">IN +91</option></select><input id="event-phone" class="form-input" type="tel" required pattern="[0-9\s()+-]{7,20}" placeholder="700 000 000"></div></div>
+          <div class="form-group"><label class="form-label" for="event-notes">Notes</label><textarea id="event-notes" class="form-textarea" rows="3" required minlength="10" placeholder="Tell us who is attending or what you would like to learn."></textarea></div>
+          <button type="submit" class="btn btn-accent" id="event-modal-submit" style="width: 100%;">Send Registration</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="social-popup-overlay" id="social-popup-overlay">
+    <div class="social-popup">
+      <button class="social-popup-close" id="social-popup-close" aria-label="Close popup">&times;</button>
+      <div class="social-popup-icon" id="social-popup-icon">Info</div>
+      <h3 id="social-popup-title">Coming Soon</h3>
+      <p id="social-popup-desc">This social media link is not set up yet. This is a demo project - the link will be available in the full version.</p>
+      <button class="btn btn-primary" id="social-popup-btn">Got It</button>
+    </div>
+  </div>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-section">
+          <a href="index.html" class="footer-brand"><img src="logo.jpeg" alt="" width="40" height="40">Encouragement by Empowerment</a>
+          <p class="footer-tagline">Empowering lives through trusted mentorship, community programs, and practical support that helps individuals and families thrive.</p>
+          <div class="footer-social">
+            <a href="#" onclick="showSocialPopup('Instagram', 'Camera'); return false;" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" onclick="showSocialPopup('Facebook', 'Social'); return false;" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a href="#" onclick="showSocialPopup('LinkedIn', 'Network'); return false;" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="mailto:hello@encouragementbyempowerment.org" aria-label="Send email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          </div>
+        </div>
+        <div><h4 class="footer-heading">Quick Links</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="programs.html">Programs</a></li><li><a href="involved.html">Get Involved</a></li><li><a href="events.html">Events & News</a></li><li><a href="contact.html">Contact</a></li><li><a href="donate.html">Donate</a></li></ul></div>
+        <div><h4 class="footer-heading">Programs</h4><ul class="footer-links"><li><a href="programs.html">Youth Mentorship</a></li><li><a href="programs.html">Life Skills Training</a></li><li><a href="programs.html">Family Support</a></li><li><a href="programs.html">Community Initiatives</a></li></ul></div>
+        <div><h4 class="footer-heading">Stay Connected</h4><ul class="footer-contact"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>hello@encouragementbyempowerment.org</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Serving communities internationally</span></li></ul>
+          <div class="footer-newsletter"><div id="footer-newsletter-wrapper"><p style="font-size:var(--text-sm);color:var(--text-secondary);margin-bottom:var(--space-sm);">Join our newsletter for updates.</p><form id="footer-newsletter-form"><input type="email" id="footer-newsletter-email" class="form-input" placeholder="Your email" required aria-label="Email for newsletter"><button type="submit">Subscribe</button></form><p id="footer-newsletter-error" style="font-size:var(--text-xs);color:#EF4444;margin-top:var(--space-xs);display:none;">Please enter a valid email address.</p></div><div id="footer-newsletter-success" style="display:none;padding:var(--space-sm) 0;font-size:var(--text-sm);color:#10B981;font-weight:600;">Thank you. You've been subscribed.</div></div>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>&copy; 2026 Encouragement by Empowerment. All rights reserved.</span><div class="footer-bottom-links"><span>Developed by SY Tech Solutions</span></div></div>
+    </div>
+  </footer>
+
+  <script>
+  const eventData = [
+    { type: 'In Person', title: 'Community Resource Fair', date: 'August 15, 2026', time: '10:00 AM - 3:00 PM', location: 'Downtown Community Center', action: 'Send Registration', desc: 'Meet local service providers, discover practical resources, and connect with our team in a welcoming community setting.', items: ['Resource tables for housing, education, and wellness support', 'Short introductions to our mentorship and family programs', 'On-site referral conversations with trained staff'] },
+    { type: 'Virtual', title: 'Parent Support Workshop', date: 'August 22, 2026', time: '6:30 PM - 8:00 PM', location: 'Zoom Webinar', action: 'Send Registration', desc: 'A guided online workshop for parents and caregivers navigating teen stress, communication, and family routines.', items: ['Practical strategies you can use at home', 'Small group discussion and peer encouragement', 'Follow-up resources after the session'] },
+    { type: 'In Person', title: 'Youth Leadership Summit', date: 'September 5, 2026', time: '9:00 AM - 4:00 PM', location: 'Eastside Youth Center', action: 'Request More Details', desc: 'A full-day summit helping youth build confidence, teamwork, and leadership habits through workshops and mentorship.', items: ['Leadership labs for youth ages 14-18', 'Team activities facilitated by trained mentors', 'Lunch, materials, and family pickup guidance included'] },
+    { type: 'Virtual', title: 'Volunteer Orientation', date: 'September 12, 2026', time: '5:00 PM - 6:30 PM', location: 'Zoom', action: 'Send Sign Up', desc: 'Learn how volunteering works, what roles are available, and how we prepare volunteers to serve with care.', items: ['Overview of volunteer roles and expectations', 'Training pathway and background check process', 'Live Q&A with the program team'] }
+  ];
+
+  function openEventModal(index) {
+    const event = eventData[index];
+    const overlay = document.getElementById('event-modal-overlay');
+    const type = document.getElementById('event-modal-type');
+    document.getElementById('event-modal-title').textContent = event.title;
+    document.getElementById('event-modal-description').textContent = event.desc;
+    document.getElementById('event-modal-date').textContent = event.date;
+    document.getElementById('event-modal-time').textContent = event.time;
+    document.getElementById('event-modal-location').textContent = event.location;
+    document.getElementById('event-modal-submit').textContent = event.action;
+    type.textContent = event.type;
+    type.className = 'event-badge ' + (event.type === 'Virtual' ? 'event-badge-virtual' : 'event-badge-inperson');
+    const list = document.getElementById('event-modal-list');
+    list.innerHTML = '';
+    event.items.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      list.appendChild(li);
+    });
+    document.getElementById('event-modal-form').style.display = '';
+    document.getElementById('event-modal-form').reset();
+    document.getElementById('event-modal-success').style.display = 'none';
+    overlay.classList.add('visible');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    document.getElementById('event-modal-close').focus();
+  }
+
+  function closeEventModal() {
+    const overlay = document.getElementById('event-modal-overlay');
+    overlay.classList.remove('visible');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const eventOverlay = document.getElementById('event-modal-overlay');
+    document.getElementById('event-modal-close').addEventListener('click', closeEventModal);
+    eventOverlay.addEventListener('click', function(e) { if (e.target === eventOverlay) closeEventModal(); });
+    document.getElementById('event-modal-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (!this.reportValidity()) return;
+      document.getElementById('event-modal-success').style.display = 'block';
+      this.style.display = 'none';
+    });
+
+    const overlay = document.getElementById('social-popup-overlay');
+    const closeBtn = document.getElementById('social-popup-close');
+    const popupBtn = document.getElementById('social-popup-btn');
+    const popupTitle = document.getElementById('social-popup-title');
+    const popupIcon = document.getElementById('social-popup-icon');
+    const popupDesc = document.getElementById('social-popup-desc');
+    window.showSocialPopup = function(name, icon) {
+      popupTitle.textContent = name + ' - Coming Soon';
+      popupIcon.textContent = icon;
+      popupDesc.textContent = 'This ' + name + ' link is not set up yet. This is a demo project - the link will be available in the full version.';
+      overlay.classList.add('visible');
+    };
+    function closePopup() { overlay.classList.remove('visible'); }
+    closeBtn.addEventListener('click', closePopup);
+    popupBtn.addEventListener('click', closePopup);
+    overlay.addEventListener('click', function(e) { if (e.target === overlay) closePopup(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closeEventModal(); closePopup(); } });
+
+    const footerForm = document.getElementById('footer-newsletter-form');
+    const footerEmail = document.getElementById('footer-newsletter-email');
+    const footerError = document.getElementById('footer-newsletter-error');
+    const footerWrapper = document.getElementById('footer-newsletter-wrapper');
+    const footerSuccess = document.getElementById('footer-newsletter-success');
+    if (footerForm) {
+      footerForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = footerEmail.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email || !emailRegex.test(email)) { footerEmail.style.borderColor = '#EF4444'; footerError.style.display = 'block'; footerEmail.focus(); return; }
+        footerEmail.style.borderColor = ''; footerError.style.display = 'none'; footerWrapper.style.display = 'none'; footerSuccess.style.display = 'block';
+      });
+    }
+  });
+  </script>
+  <script src="assets/js/theme.js" defer></script>
+  <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/animations.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
 </html>
-
-

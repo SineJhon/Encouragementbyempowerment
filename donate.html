@@ -1,205 +1,346 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Make a secure one-time or recurring donation to Encouragement by Empowerment and help transform lives."
-    />
-    <title>Donate | Encouragement by Empowerment</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" type="image/jpeg" href="logo.jpeg" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
-    <header class="site-header page-header">
-      <div class="container nav-wrap">
-<button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
-          <span></span><span></span><span></span>
-        </button>
-        <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
-          <ul>
-            <li><a href="index.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5L12 4l9 7.5"></path><path d="M6.5 10.8V20h11V10.8"></path><path d="M10 20v-5h4v5"></path></svg><span>Home</span></a></li>
-            <li><a href="about.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5h6a3 3 0 0 1 3 3V20a3 3 0 0 0-3-3h-6z"></path><path d="M20.5 6.5h-6a3 3 0 0 0-3 3V20a3 3 0 0 1 3-3h6z"></path><path d="M12 9.5v9.8"></path></svg><span>About Us</span></a></li>
-            <li><a href="programs.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="6" rx="1.5"></rect><rect x="3.5" y="13.5" width="8" height="6" rx="1.5"></rect><rect x="12.5" y="13.5" width="8" height="6" rx="1.5"></rect></svg><span>Programs</span></a></li>
-            <li><a href="involved.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.8 14.5h5.2l2.2 2.2a2 2 0 0 0 2.8 0l1-1"></path><path d="M21.2 14.5H16l-2.2 2.2a2 2 0 0 1-2.8 0l-1-1"></path><path d="M7 14.5l2.3-3.3a2 2 0 0 1 3.1-.2l2.6 2.7"></path></svg><span>Get Involved</span></a></li>
-            <li><a href="events.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2"></rect><path d="M8 8h8"></path><path d="M8 11h8"></path><path d="M8 14h5"></path><path d="M16.5 4.5v15"></path></svg><span>Events &amp; News</span></a></li>
-            <li><a href="contact.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.2L20.5 4.5 14 20l-2.9-6-8.1-2.8z"></path><path d="M11.1 14l9.4-9.5"></path></svg><span>Contact</span></a></li>
-</ul>
-        </nav>
-        <a class="nav-donate nav-donate-cta nav-current" href="donate.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19.2l-6.7-6.4a4.2 4.2 0 0 1 5.9-6l.8.8.8-.8a4.2 4.2 0 0 1 5.9 6z"></path><circle cx="18.5" cy="17.8" r="3"></circle><path d="M18.5 16.3v3"></path><path d="M17.5 17.2h2"></path></svg><span>Donate</span></a>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Support Encouragement by Empowerment with a secure donation. Your gift transforms lives through mentorship, family support, and community programs.">
+  <meta property="og:title" content="Donate | Encouragement by Empowerment">
+  <meta property="og:description" content="Give today - change a life. Your donation directly supports our mission.">
+  <title>Donate | Encouragement by Empowerment</title>
+  <link rel="canonical" href="https://sinejhon.github.io/Encouragementbyempowerment/donate">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <style>
+    .donate-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--space-xl); align-items: start; }
+    .step-indicator { display: flex; justify-content: center; gap: var(--space-md); margin-bottom: var(--space-xl); }
+    .step-dot { width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: var(--text-sm); color: var(--text-muted); background: var(--bg-surface); transition: all 0.2s ease; }
+    .step-dot.active { border-color: var(--color-primary); color: var(--color-primary); background: rgba(37,99,235,0.05); }
+    .step-dot.done { border-color: #10B981; color: white; background: #10B981; }
+    .donate-panel { padding: var(--space-xl); border: 1px solid var(--border); border-radius: var(--radius-xl); background: var(--bg-surface); box-shadow: var(--shadow-sm); }
+    .donate-sidebar { padding: var(--space-xl); border-radius: var(--radius-lg); background: var(--gradient-card); border: 1px solid var(--border); position: sticky; top: 100px; }
+    .donate-sidebar h3 { margin-bottom: var(--space-sm); }
+    .donate-sidebar .impact-preview { font-size: var(--text-sm); color: var(--text-secondary); }
+    .tier-select { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-sm); margin-bottom: var(--space-lg); }
+    .tier-btn { padding: var(--space-md); border: 2px solid var(--border); border-radius: var(--radius-md); text-align: center; cursor: pointer; font-family: var(--font-display); font-weight: 700; font-size: var(--text-xl); color: var(--text-primary); background: var(--bg-surface); transition: all 0.2s ease; }
+    .tier-btn:hover, .tier-btn.active { border-color: var(--color-accent); box-shadow: var(--shadow-glow-accent); }
+    .tier-btn.active { background: rgba(245,158,11,0.05); }
+    .tier-btn small { display: block; font-size: var(--text-xs); font-weight: 400; color: var(--text-secondary); }
+    .frequency-group { display: flex; gap: var(--space-sm); margin-bottom: var(--space-lg); }
+    .freq-btn { flex: 1; padding: var(--space-sm); border: 1px solid var(--border); border-radius: var(--radius-sm); text-align: center; cursor: pointer; font-family: var(--font-display); font-size: var(--text-sm); font-weight: 600; transition: all 0.2s ease; background: var(--bg-surface); }
+    .freq-btn.active { border-color: var(--color-primary); color: var(--color-primary); background: rgba(37,99,235,0.05); }
+    .phone-row { display: grid; grid-template-columns: minmax(118px, 0.38fr) 1fr; gap: var(--space-sm); }
+    .payment-methods { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-sm); margin-bottom: var(--space-lg); }
+    .payment-method { min-height: 74px; border: 1.5px solid var(--border); border-radius: var(--radius-md); background: var(--bg-surface); color: var(--text-primary); cursor: pointer; font-family: var(--font-display); font-weight: 800; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.25rem; transition: all 0.2s ease; }
+    .payment-method span { font-family: var(--font-body); font-size: var(--text-xs); color: var(--text-secondary); font-weight: 600; }
+    .payment-method.active, .payment-method:hover { border-color: var(--color-primary); box-shadow: var(--shadow-glow); transform: translateY(-1px); }
+    .card-preview { padding: var(--space-lg); border-radius: var(--radius-lg); color: white; background: linear-gradient(135deg, #111827, #2563EB); box-shadow: var(--shadow-md); margin-bottom: var(--space-lg); }
+    .card-preview-top { display: flex; justify-content: space-between; gap: var(--space-md); margin-bottom: var(--space-xl); font-family: var(--font-display); font-weight: 800; }
+    .card-preview-number { font-family: var(--font-mono); letter-spacing: 0.08em; margin-bottom: var(--space-md); }
+    .card-preview-bottom { display: flex; justify-content: space-between; gap: var(--space-md); font-size: var(--text-xs); text-transform: uppercase; color: rgba(255,255,255,0.76); }
+    .review-list { display: grid; gap: var(--space-sm); margin-bottom: var(--space-lg); }
+    .review-row { display: flex; justify-content: space-between; gap: var(--space-md); padding: var(--space-sm) 0; border-bottom: 1px solid var(--border); }
+    .secure-note { display: flex; align-items: center; gap: var(--space-sm); font-size: var(--text-xs); color: var(--text-muted); margin-top: var(--space-lg); padding: var(--space-sm); border-radius: var(--radius-sm); background: var(--bg-elevated); }
+    .secure-note svg { width: 16px; height: 16px; flex-shrink: 0; }
+    .donation-success { display: none; padding: var(--space-lg); margin-top: var(--space-lg); border-radius: var(--radius-md); border: 1px solid rgba(16,185,129,0.28); background: rgba(16,185,129,0.1); color: #059669; font-weight: 700; text-align: center; }
+    @media (max-width: 1024px) { .donate-layout { grid-template-columns: 1fr; } .donate-sidebar { position: static; } }
+    @media (max-width: 720px) { .payment-methods { grid-template-columns: repeat(2, minmax(0, 1fr)); } .tier-select { grid-template-columns: 1fr; } .phone-row { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div id="loading-bar" class="loading-bar"></div>
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg></button>
+  <header class="site-header" role="banner">
+    <div class="container nav-wrap">
+      <a href="index.html" class="nav-brand"><img src="logo.jpeg" alt="" width="36" height="36"><span>Encouragement by Empowerment</span></a>
+      <nav aria-label="Primary navigation"><ul id="nav-links" class="nav-links">
+        <li><a href="index.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</a></li>
+        <li><a href="about.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>About</a></li>
+        <li><a href="programs.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Programs</a></li>
+        <li><a href="involved.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>Get Involved</a></li>
+        <li><a href="events.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Events</a></li>
+        <li><a href="contact.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Contact</a></li>
+      </ul></nav>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode"><svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg></button>
+        <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation menu"><span></span><span></span><span></span></button>
+        <a href="donate.html" class="btn btn-accent btn-donate-glow">Give Today</a>
       </div>
-      <section class="page-hero" aria-labelledby="donate-title">
-        <div class="container reveal">
-          <p class="hero-kicker">Secure Giving</p>
-          <h1 id="donate-title">Your Gift Creates Lasting Encouragement</h1>
-          <p>Support mentorship, resources, and trusted nonprofit services in your community.</p>
-        </div>
-      </section>
-    </header>
+    </div>
+  </header>
 
-    <main id="main-content">
-      <section class="section">
-        <div class="container donate-layout">
-          <article class="card form-card reveal">
-            <h2>Choose Donation Type</h2>
-            <div class="toggle-group" role="group" aria-label="Donation type">
-              <button class="toggle-btn active" type="button" data-frequency="one-time">One-Time</button>
-              <button class="toggle-btn" type="button" data-frequency="recurring">Recurring</button>
+  <main id="main-content">
+    <section class="page-hero fade-up">
+      <div class="container">
+        <span class="eyebrow">Support Our Mission</span>
+        <h1>Give Today - Change a Life</h1>
+        <p>Your generosity fuels mentorship, family support, and community programs that transform lives every day.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="donate-layout fade-up">
+          <div class="donate-panel">
+            <div class="step-indicator">
+              <div class="step-dot active" id="step-1">1</div>
+              <div class="step-dot" id="step-2">2</div>
+              <div class="step-dot" id="step-3">3</div>
+              <div class="step-dot" id="step-4">4</div>
             </div>
-
-            <label class="donation-amount-label" for="donation-amount">Donation Amount</label>
-            <p class="donation-amount-subtitle">Tap a quick amount or enter a custom value in USD.</p>
-            <div class="amount-picker" role="group" aria-label="Quick donation amounts">
-              <button class="amount-chip active" type="button" data-amount-choice="25">$25</button>
-              <button class="amount-chip" type="button" data-amount-choice="50">$50</button>
-              <button class="amount-chip" type="button" data-amount-choice="100">$100</button>
-              <button class="amount-chip" type="button" data-amount-choice="250">$250</button>
-              <button class="amount-chip" type="button" data-amount-choice="500">$500</button>
-              <button class="amount-chip" type="button" data-amount-choice="custom">Custom</button>
-            </div>
-            <input id="donation-amount" name="amount" type="number" min="1" step="1" value="25" placeholder="Enter amount in USD" required />
-
-            <p class="form-note" id="donation-note">You are making a one-time gift.</p>
-
-            <h3>Choose Payment System</h3>
-            <p class="form-intro">Use PayPal or another payment system below to continue with your donation.</p>
-            <div class="payment-way-grid" role="group" aria-label="Payment systems">
-              <button class="payment-way active" type="button" aria-label="PayPal" data-payment-way="PayPal" data-unset-alert data-alert-message="Payment Is Not Integrated Yet Since It Is A Demo Project.">
-                <svg class="payment-way-logo" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 170 48" aria-hidden="true"><path fill="#003087" d="M62.56 28.672a10.111 10.111 0 009.983-8.56c.78-4.967-3.101-9.303-8.6-9.303H55.08a.689.689 0 00-.69.585l-3.95 25.072a.643.643 0 00.634.742h4.69a.689.689 0 00.688-.585l1.162-7.365a.689.689 0 01.689-.586h4.257zm3.925-8.786c-.29 1.836-1.709 3.189-4.425 3.189h-3.474l1.053-6.68h3.411c2.81.006 3.723 1.663 3.435 3.496v-.005zm26.378-1.18H88.41a.69.69 0 00-.69.585l-.144.924s-3.457-3.775-9.575-1.225c-3.51 1.461-5.194 4.48-5.91 6.69 0 0-2.277 6.718 2.87 10.417 0 0 4.771 3.556 10.145-.22l-.093.589a.642.642 0 00.634.742h4.451a.689.689 0 00.69-.585l2.708-17.175a.643.643 0 00-.634-.742zm-6.547 9.492a4.996 4.996 0 01-4.996 4.276 4.513 4.513 0 01-1.397-.205c-1.92-.616-3.015-2.462-2.7-4.462a4.996 4.996 0 015.014-4.277c.474-.005.946.065 1.398.206 1.913.614 3.001 2.46 2.686 4.462h-.005z"/><path fill="#0070E0" d="M126.672 28.672a10.115 10.115 0 009.992-8.56c.779-4.967-3.101-9.303-8.602-9.303h-8.86a.69.69 0 00-.689.585l-3.962 25.079a.637.637 0 00.365.683.64.64 0 00.269.06h4.691a.69.69 0 00.689-.586l1.163-7.365a.688.688 0 01.689-.586l4.255-.007zm3.925-8.786c-.29 1.836-1.709 3.189-4.426 3.189h-3.473l1.054-6.68h3.411c2.808.006 3.723 1.663 3.434 3.496v-.005zm26.377-1.18h-4.448a.69.69 0 00-.689.585l-.146.924s-3.456-3.775-9.574-1.225c-3.509 1.461-5.194 4.48-5.911 6.69 0 0-2.276 6.718 2.87 10.417 0 0 4.772 3.556 10.146-.22l-.093.589a.637.637 0 00.365.683c.084.04.176.06.269.06h4.451a.686.686 0 00.689-.586l2.709-17.175a.657.657 0 00-.148-.518.632.632 0 00-.49-.224zm-6.546 9.492a4.986 4.986 0 01-4.996 4.276 4.513 4.513 0 01-1.399-.205c-1.921-.616-3.017-2.462-2.702-4.462a4.996 4.996 0 014.996-4.277c.475-.005.947.064 1.399.206 1.933.614 3.024 2.46 2.707 4.462h-.005z"/><path fill="#003087" d="M109.205 19.131l-5.367 9.059-2.723-8.992a.69.69 0 00-.664-.492h-4.842a.516.516 0 00-.496.689l4.88 15.146-4.413 7.138a.517.517 0 00.442.794h5.217a.858.858 0 00.741-.418l13.632-22.552a.516.516 0 00-.446-.789h-5.215a.858.858 0 00-.746.417z"/><path fill="#0070E0" d="M161.982 11.387l-3.962 25.079a.637.637 0 00.365.683c.084.04.176.06.269.06h4.689a.688.688 0 00.689-.586l3.963-25.079a.637.637 0 00-.146-.517.645.645 0 00-.488-.225h-4.69a.69.69 0 00-.689.585z"/><path fill="#001C64" d="M37.146 22.26c-1.006 5.735-5.685 10.07-11.825 10.07h-3.898c-.795 0-1.596.736-1.723 1.55l-1.707 10.835c-.099.617-.388.822-1.013.822h-6.27c-.634 0-.784-.212-.689-.837l.72-7.493-7.526-.389c-.633 0-.862-.345-.772-.977l5.135-32.56c.099-.617.483-.882 1.106-.882h13.023c6.269 0 10.235 4.22 10.72 9.692 3.73 2.52 5.474 5.873 4.72 10.168z"/><path fill="#0070E0" d="M12.649 25.075l-1.907 12.133-1.206 7.612a1.034 1.034 0 001.016 1.19h6.622a1.27 1.27 0 001.253-1.072l1.743-11.06a1.27 1.27 0 011.253-1.071h3.898A12.46 12.46 0 0037.617 22.26c.675-4.307-1.492-8.228-5.201-10.165a9.96 9.96 0 01-.12 1.37 12.461 12.461 0 01-12.295 10.54h-6.1a1.268 1.268 0 00-1.252 1.07z"/><path fill="#003087" d="M10.741 37.208H3.03a1.035 1.035 0 01-1.018-1.192L7.208 3.072A1.268 1.268 0 018.46 2H21.7c6.269 0 10.827 4.562 10.72 10.089a11.567 11.567 0 00-5.399-1.287H15.983a1.27 1.27 0 00-1.254 1.071l-2.08 13.202-1.908 12.133z"/></svg>
-                <span class="payment-way-label">PayPal</span>
-              </button>
-              <button class="payment-way" type="button" aria-label="Stripe" data-payment-way="Stripe" data-unset-alert data-alert-message="Payment Is Not Integrated Yet Since It Is A Demo Project.">
-                <svg class="payment-way-logo" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" aria-hidden="true"><path d="M506 116v280c0 60.71-49.29 110-110 110H116C55.29 506 6 456.71 6 396V116C6 55.289 55.29 6 116 6h280c60.71 0 110 49.289 110 110z" fill="#635bff"/><path d="M237.458 204.11c0-10.998 9.198-15.228 24.435-15.228 21.848 0 49.446 6.486 71.293 18.048v-66.272c-23.86-9.307-47.433-12.973-71.293-12.973-58.358 0-97.167 29.893-97.167 79.81 0 77.834 109.24 65.426 109.24 98.985 0 12.973-11.499 17.202-27.597 17.202-23.86 0-54.334-9.587-78.48-22.56v67.119c26.734 11.28 53.757 16.074 78.48 16.074 59.796 0 100.905-29.047 100.905-79.526-.288-84.04-109.816-69.093-109.816-100.679z" fill="#fff"/></svg>
-                <span class="payment-way-label">Stripe</span>
-              </button>
-              <button class="payment-way" type="button" aria-label="Bank Card" data-payment-way="Bank Card" data-unset-alert data-alert-message="Payment Is Not Integrated Yet Since It Is A Demo Project.">
-                <svg class="payment-way-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 9.5h18"></path><path d="M7 15h4"></path></svg>
-                <span class="payment-way-label">Bank Card</span>
-              </button>
-              <button class="payment-way" type="button" aria-label="Mobile Money" data-payment-way="Mobile Money" data-unset-alert data-alert-message="Payment Is Not Integrated Yet Since It Is A Demo Project.">
-                <svg class="payment-way-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2"></rect><path d="M9.5 5.5h5"></path><circle cx="12" cy="18" r="1"></circle></svg>
-                <span class="payment-way-label">Mobile Money</span>
-              </button>
-            </div>
-            <p class="form-note" id="payment-method-note">Selected payment method: PayPal.</p>
-          </article>
-
-          <article class="card form-card reveal delay-1 payment-card-panel">
-            <div class="card-details" aria-labelledby="card-details-title">
-              <h3 id="card-details-title">Credit or Debit Card Details</h3>
-              <p class="secure-fill-note">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 10.5V8.2a5.5 5.5 0 1 1 11 0v2.3"></path><rect x="4.5" y="10.5" width="15" height="10" rx="2"></rect><circle cx="12" cy="15.5" r="1.2"></circle><path d="M12 16.7v2"></path></svg>
-                Secured filling method: encrypted browser autofill fields for card details.
-              </p>
-              <p class="form-intro">Enter your Visa or Mastercard details below. Secure browser autofill is supported.</p>
-
-              <label for="card-name">Cardholder Name</label>
-              <input id="card-name" name="cardName" type="text" autocomplete="cc-name" placeholder="Name on card" required />
-
-              <label for="card-number">Card Number</label>
-              <input
-                id="card-number"
-                name="cardNumber"
-                type="text"
-                inputmode="numeric"
-                autocomplete="cc-number"
-                placeholder="1234 5678 9012 3456"
-                maxlength="19"
-                spellcheck="false"
-                required
-              />
-              <div class="card-detection-row">
-                <div class="card-brand-logos" aria-label="Supported cards">
-                  <span class="card-logo card-logo-visa" data-card-logo="visa">VISA</span>
-                  <span class="card-logo card-logo-mastercard" data-card-logo="mastercard">
-                    <span class="mc-disc mc-left" aria-hidden="true"></span>
-                    <span class="mc-disc mc-right" aria-hidden="true"></span>
-                    <span class="mc-text">Mastercard</span>
-                  </span>
+            <form data-form="donate" data-local-handler id="donate-form">
+              <div id="step-1-content" data-step-content>
+                <h3 style="margin-bottom: var(--space-md);">Choose Your Amount</h3>
+                <div class="tier-select">
+                  <button type="button" class="tier-btn active" onclick="selectAmount(25, this)">$25<small>Mentorship materials</small></button>
+                  <button type="button" class="tier-btn" onclick="selectAmount(50, this)">$50<small>Family support session</small></button>
+                  <button type="button" class="tier-btn" onclick="selectAmount(100, this)">$100<small>Community workshop</small></button>
                 </div>
-                <p class="card-brand-hint" id="card-brand-hint" aria-live="polite">Card type will appear as you type.</p>
+                <div class="form-group"><label class="form-label" for="custom-amount">Or enter a custom amount</label><input id="custom-amount" class="form-input" type="number" min="1" step="1" placeholder="$0.00"></div>
+                <div class="form-group"><label class="form-label">Frequency</label>
+                  <div class="frequency-group">
+                    <button type="button" class="freq-btn active" onclick="selectFrequency('One-Time', this)">One-Time</button>
+                    <button type="button" class="freq-btn" onclick="selectFrequency('Monthly', this)">Monthly</button>
+                    <button type="button" class="freq-btn" onclick="selectFrequency('Annual', this)">Annual</button>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="nextStep(2)">Continue</button>
               </div>
-
-              <div class="card-input-grid">
-                <div>
-                  <label for="card-expiry">Expiry</label>
-                  <input
-                    id="card-expiry"
-                    name="cardExpiry"
-                    type="text"
-                    inputmode="numeric"
-                    autocomplete="cc-exp"
-                    placeholder="MM/YY"
-                    maxlength="5"
-                    spellcheck="false"
-                    required
-                  />
-                </div>
-                <div>
-                  <label for="card-cvc">Security Code</label>
-                  <input
-                    id="card-cvc"
-                    name="cardCvc"
-                    type="text"
-                    inputmode="numeric"
-                    autocomplete="cc-csc"
-                    placeholder="CVC"
-                    maxlength="4"
-                    spellcheck="false"
-                    required
-                  />
-                </div>
+              <div id="step-2-content" data-step-content style="display: none;">
+                <h3 style="margin-bottom: var(--space-md);">Your Information</h3>
+                <div class="form-group"><label class="form-label" for="donor-name">Full Name</label><input id="donor-name" class="form-input" type="text" required minlength="2" placeholder="Your name"></div>
+                <div class="form-group"><label class="form-label" for="donor-email">Email</label><input id="donor-email" class="form-input" type="email" required placeholder="your@email.com"></div>
+                <div class="form-group"><label class="form-label" for="donor-phone">Phone</label><div class="phone-row"><select id="donor-country" class="form-select" required aria-label="Country code"><option value="+1">US +1</option><option value="+44">UK +44</option><option value="+254">KE +254</option><option value="+234">NG +234</option><option value="+27">ZA +27</option><option value="+91">IN +91</option></select><input id="donor-phone" class="form-input" type="tel" required pattern="[0-9\s()+-]{7,20}" placeholder="700 000 000"></div></div>
+                <div style="display: flex; gap: var(--space-sm);"><button type="button" class="btn btn-ghost" onclick="prevStep(1)">Back</button><button type="button" class="btn btn-primary" onclick="nextStep(3)" style="flex:1;">Continue</button></div>
               </div>
+              <div id="step-3-content" data-step-content style="display: none;">
+                <h3 style="margin-bottom: var(--space-md);">Payment Details</h3>
+                <div class="payment-methods" aria-label="Payment methods">
+                  <button type="button" class="payment-method active" onclick="selectPayment('card', this)">Card<span>Visa / MC</span></button>
+                  <button type="button" class="payment-method" onclick="selectPayment('visa', this)">VISA<span>Card</span></button>
+                  <button type="button" class="payment-method" onclick="selectPayment('mastercard', this)">MC<span>Mastercard</span></button>
+                  <button type="button" class="payment-method" onclick="selectPayment('paypal', this)">PayPal<span>Demo</span></button>
+                  <button type="button" class="payment-method" onclick="selectPayment('stripe', this)">Stripe<span>Demo</span></button>
+                </div>
+                <div class="card-preview" aria-hidden="true">
+                  <div class="card-preview-top"><span id="card-brand">VISA / MC</span><span>Secure Demo</span></div>
+                  <div class="card-preview-number" id="card-preview-number">0000 0000 0000 0000</div>
+                  <div class="card-preview-bottom"><span id="card-preview-name">Your Name</span><span id="card-preview-expiry">MM/YY</span></div>
+                </div>
+                <div class="form-group"><label class="form-label" for="card-name">Name on Card</label><input id="card-name" class="form-input" type="text" required minlength="2" placeholder="Name on card"></div>
+                <div class="form-group"><label class="form-label" for="card-number">Card Number</label><input id="card-number" class="form-input" type="text" inputmode="numeric" required pattern="[0-9\s]{13,19}" placeholder="0000 0000 0000 0000" maxlength="19"></div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-sm);">
+                  <div class="form-group"><label class="form-label" for="card-expiry">Expiry</label><input id="card-expiry" class="form-input" type="text" required pattern="(0[1-9]|1[0-2])\/[0-9]{2}" placeholder="MM/YY" maxlength="5"></div>
+                  <div class="form-group"><label class="form-label" for="card-cvc">CVC</label><input id="card-cvc" class="form-input" type="text" inputmode="numeric" required pattern="[0-9]{3,4}" placeholder="123" maxlength="4"></div>
+                </div>
+                <div style="display: flex; gap: var(--space-sm);"><button type="button" class="btn btn-ghost" onclick="prevStep(2)">Back</button><button type="button" class="btn btn-accent" onclick="nextStep(4)" style="flex:1;">Review Donation</button></div>
+              </div>
+              <div id="step-4-content" data-step-content style="display: none;">
+                <h3 style="margin-bottom: var(--space-md);">Review Your Gift</h3>
+                <div class="review-list">
+                  <div class="review-row"><strong>Amount</strong><span id="review-amount">$25</span></div>
+                  <div class="review-row"><strong>Frequency</strong><span id="review-freq">One-Time</span></div>
+                  <div class="review-row"><strong>Donor</strong><span id="review-name">Your Name</span></div>
+                  <div class="review-row"><strong>Payment</strong><span id="review-payment">Card</span></div>
+                </div>
+                <button type="submit" class="btn btn-accent btn-lg btn-donate-glow" style="width: 100%;">Complete Donation</button>
+                <button type="button" class="btn btn-ghost" onclick="prevStep(3)" style="width: 100%; margin-top: var(--space-sm);">Edit Details</button>
+                <div class="donation-success" id="donation-success">Thank you. This donation completion is a demo notification; payment processing is not connected yet.</div>
+              </div>
+            </form>
+          </div>
+          <div class="donate-sidebar">
+            <h3>Your Impact</h3>
+            <div class="impact-preview">
+              <p style="font-size: var(--text-2xl); font-weight: 800; color: var(--color-primary); margin-bottom: var(--space-sm);" id="impact-amount-display">$25</p>
+              <p id="impact-description">Provides mentorship materials for 1 youth for a month</p>
             </div>
-            <button class="btn btn-primary btn-pay-now" type="button" data-unset-alert data-alert-message="Payment Is Not Integrated Yet Since It Is A Demo Project.">Pay Now</button>
-          </article>
-        </div>
-      </section>
-    </main>
-    <footer class="site-footer">
-      <div class="container footer-wrap">
-        <a class="footer-brand" href="index.html" aria-label="Encouragement by Empowerment home">
-          <img class="footer-logo" src="logo.jpeg" alt="Encouragement by Empowerment logo" />
-          <span class="footer-brand-text-wrap">
-            <span class="footer-brand-name">Encouragement by Empowerment</span>
-            <span class="footer-brand-tag">Empowering lives through encouragement</span>
-          </span>
-        </a>
-
-        <div class="footer-links-group">
-          <a class="footer-link" href="mailto:hello@encouragementbyempowerment.org" aria-label="Send us an email" data-unset-alert data-alert-message="Not Connected Yet, Since It Is A Demo Project">
-            <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 8l9 6 9-6"></path></svg>
-            <span>hello@encouragementbyempowerment.org</span>
-          </a>
-          <div class="footer-social" aria-label="Social links">
-            <a class="footer-link footer-social-link" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" data-unset-alert data-alert-message="Not Connected Yet, Since It Is A Demo Project">
-              <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"></rect><circle cx="12" cy="12" r="3.6"></circle><circle cx="17.4" cy="6.6" r="1"></circle></svg>
-              <span>Instagram</span>
-            </a>
-            <a class="footer-link footer-social-link" href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" data-unset-alert data-alert-message="Not Connected Yet, Since It Is A Demo Project">
-              <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 8h2.6V4.8h-2.9c-3.4 0-5.1 2-5.1 5.3V13H6v3.3h2.8V20h3.6v-3.7h3l.5-3.3h-3.5V10.6c0-1.2.5-1.9 1.8-1.9z"></path></svg>
-              <span>Facebook</span>
-            </a>
-            <a class="footer-link footer-social-link" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" data-unset-alert data-alert-message="Not Connected Yet, Since It Is A Demo Project">
-              <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="9" width="3.2" height="11"></rect><circle cx="5.6" cy="5.8" r="1.8"></circle><path d="M10 9h3.1v1.6c.6-1.1 1.9-1.9 3.7-1.9 3 0 4.2 1.9 4.2 5v6.3h-3.3v-5.6c0-1.7-.6-2.7-2.1-2.7-1.4 0-2.3 1-2.3 2.7v5.6H10z"></path></svg>
-              <span>LinkedIn</span>
-            </a>
+            <hr style="border: none; border-top: 1px solid var(--border); margin: var(--space-lg) 0;">
+            <div class="secure-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg><span>Your information is secure and encrypted. 100% of your donation supports our programs.</span></div>
+            <p style="font-size: var(--text-xs); color: var(--text-muted); margin-top: var(--space-sm);">Tax-Deductible - EIN: XX-XXXXXXX</p>
           </div>
         </div>
-
-        <p class="footer-copy">&copy; 2026 Encouragement by Empowerment. All rights reserved.</p>
       </div>
-    </footer>
-<script src="script.js"></script>
-  </body>
+    </section>
+  </main>
+
+  <div class="social-popup-overlay" id="social-popup-overlay">
+    <div class="social-popup">
+      <button class="social-popup-close" id="social-popup-close" aria-label="Close popup">&times;</button>
+      <div class="social-popup-icon" id="social-popup-icon">Demo</div>
+      <h3 id="social-popup-title">Demo Project</h3>
+      <p id="social-popup-desc">This payment option is not set up yet because this is a demo project.</p>
+      <button class="btn btn-primary" id="social-popup-btn">Got It</button>
+    </div>
+  </div>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-section">
+          <a href="index.html" class="footer-brand"><img src="logo.jpeg" alt="" width="40" height="40">Encouragement by Empowerment</a>
+          <p class="footer-tagline">Empowering lives through trusted mentorship, community programs, and practical support that helps individuals and families thrive.</p>
+          <div class="footer-social">
+            <a href="#" onclick="showDemoPopup('Instagram - Coming Soon', 'This social media link is not set up yet. This is a demo project.'); return false;" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" onclick="showDemoPopup('Facebook - Coming Soon', 'This social media link is not set up yet. This is a demo project.'); return false;" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a href="#" onclick="showDemoPopup('LinkedIn - Coming Soon', 'This social media link is not set up yet. This is a demo project.'); return false;" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="mailto:hello@encouragementbyempowerment.org" aria-label="Send email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          </div>
+        </div>
+        <div><h4 class="footer-heading">Quick Links</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="programs.html">Programs</a></li><li><a href="involved.html">Get Involved</a></li><li><a href="events.html">Events & News</a></li><li><a href="contact.html">Contact</a></li><li><a href="donate.html">Donate</a></li></ul></div>
+        <div><h4 class="footer-heading">Programs</h4><ul class="footer-links"><li><a href="programs.html">Youth Mentorship</a></li><li><a href="programs.html">Life Skills Training</a></li><li><a href="programs.html">Family Support</a></li><li><a href="programs.html">Community Initiatives</a></li></ul></div>
+        <div><h4 class="footer-heading">Stay Connected</h4><ul class="footer-contact"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>hello@encouragementbyempowerment.org</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Serving communities internationally</span></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>&copy; 2026 Encouragement by Empowerment. All rights reserved.</span><div class="footer-bottom-links"><span>Developed by SY Tech Solutions</span></div></div>
+    </div>
+  </footer>
+
+  <script>
+    let currentStep = 1;
+    let selectedAmount = 25;
+    let selectedFreq = 'One-Time';
+    let selectedPayment = 'Card';
+
+    function showDemoPopup(title, message) {
+      document.getElementById('social-popup-title').textContent = title;
+      document.getElementById('social-popup-icon').textContent = 'Demo';
+      document.getElementById('social-popup-desc').textContent = message;
+      document.getElementById('social-popup-overlay').classList.add('visible');
+    }
+
+    function closeDemoPopup() {
+      document.getElementById('social-popup-overlay').classList.remove('visible');
+    }
+
+    function selectAmount(amount, el) {
+      selectedAmount = amount;
+      document.querySelectorAll('.tier-btn').forEach(b => b.classList.remove('active'));
+      el.classList.add('active');
+      document.getElementById('custom-amount').value = '';
+      syncImpact(amount);
+    }
+
+    function syncImpact(amount) {
+      document.getElementById('impact-amount-display').textContent = '$' + amount;
+      const descs = {25:'Provides mentorship materials for 1 youth for a month',50:'Funds one family support session',100:'Sponsors a community workshop'};
+      document.getElementById('impact-description').textContent = descs[amount] || 'Custom donation amount that supports our programs.';
+    }
+
+    function selectFrequency(freq, el) {
+      selectedFreq = freq;
+      document.querySelectorAll('.freq-btn').forEach(b => b.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    function selectPayment(method, el) {
+      document.querySelectorAll('.payment-method').forEach(b => b.classList.remove('active'));
+      el.classList.add('active');
+      if (method === 'paypal' || method === 'stripe') {
+        selectedPayment = method === 'paypal' ? 'PayPal' : 'Stripe';
+        showDemoPopup(selectedPayment + ' Not Connected', selectedPayment + ' payment is not set up yet because this is a demo project.');
+        return;
+      }
+      selectedPayment = method === 'mastercard' ? 'Mastercard' : method === 'visa' ? 'Visa' : 'Card';
+      document.getElementById('card-brand').textContent = selectedPayment === 'Card' ? 'VISA / MC' : selectedPayment.toUpperCase();
+    }
+
+    function validateVisibleStep() {
+      const step = document.getElementById('step-' + currentStep + '-content');
+      const fields = Array.from(step.querySelectorAll('input, select, textarea'));
+      for (const field of fields) {
+        if (!field.checkValidity()) {
+          field.reportValidity();
+          field.focus();
+          return false;
+        }
+      }
+      if (currentStep === 1 && (!selectedAmount || selectedAmount < 1)) {
+        document.getElementById('custom-amount').setCustomValidity('Choose or enter a donation amount.');
+        document.getElementById('custom-amount').reportValidity();
+        return false;
+      }
+      document.getElementById('custom-amount').setCustomValidity('');
+      return true;
+    }
+
+    function nextStep(step) {
+      if (!validateVisibleStep()) return;
+      currentStep = step;
+      document.querySelectorAll('[data-step-content]').forEach(s => s.style.display = 'none');
+      document.getElementById('step-' + step + '-content').style.display = 'block';
+      document.querySelectorAll('.step-dot').forEach((d, i) => {
+        d.classList.toggle('active', i + 1 === step);
+        d.classList.toggle('done', i + 1 < step);
+      });
+      document.getElementById('review-amount').textContent = '$' + selectedAmount;
+      document.getElementById('review-freq').textContent = selectedFreq;
+      document.getElementById('review-name').textContent = document.getElementById('donor-name').value || 'Your Name';
+      document.getElementById('review-payment').textContent = selectedPayment;
+    }
+
+    function prevStep(step) {
+      currentStep = step;
+      document.querySelectorAll('[data-step-content]').forEach(s => s.style.display = 'none');
+      document.getElementById('step-' + step + '-content').style.display = 'block';
+      document.querySelectorAll('.step-dot').forEach((d, i) => {
+        d.classList.toggle('active', i + 1 === step);
+        d.classList.toggle('done', i + 1 < step);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const customAmount = document.getElementById('custom-amount');
+      customAmount.addEventListener('input', function() {
+        const val = parseInt(this.value, 10);
+        if (val > 0) {
+          selectedAmount = val;
+          document.querySelectorAll('.tier-btn').forEach(b => b.classList.remove('active'));
+          syncImpact(val);
+          this.setCustomValidity('');
+        }
+      });
+
+      const cardName = document.getElementById('card-name');
+      const cardNumber = document.getElementById('card-number');
+      const cardExpiry = document.getElementById('card-expiry');
+
+      cardName.addEventListener('input', () => {
+        document.getElementById('card-preview-name').textContent = cardName.value || 'Your Name';
+      });
+      cardExpiry.addEventListener('input', () => {
+        cardExpiry.value = cardExpiry.value.replace(/[^\d/]/g, '').replace(/^(\d{2})(\d)/, '$1/$2').slice(0, 5);
+        document.getElementById('card-preview-expiry').textContent = cardExpiry.value || 'MM/YY';
+      });
+      cardNumber.addEventListener('input', () => {
+        let digits = cardNumber.value.replace(/\D/g, '').slice(0, 16);
+        cardNumber.value = digits.replace(/(.{4})/g, '$1 ').trim();
+        document.getElementById('card-preview-number').textContent = cardNumber.value || '0000 0000 0000 0000';
+        const brand = digits.startsWith('4') ? 'VISA' : digits.startsWith('5') ? 'MASTERCARD' : 'VISA / MC';
+        document.getElementById('card-brand').textContent = brand;
+        if (brand === 'VISA') selectedPayment = 'Visa';
+        if (brand === 'MASTERCARD') selectedPayment = 'Mastercard';
+      });
+
+      document.getElementById('donate-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (!validateVisibleStep()) return;
+        document.getElementById('donation-success').style.display = 'block';
+        showDemoPopup('Donation Demo', 'Donation completion is not connected yet because this is a demo project. No payment has been processed.');
+      });
+
+      document.getElementById('social-popup-close').addEventListener('click', closeDemoPopup);
+      document.getElementById('social-popup-btn').addEventListener('click', closeDemoPopup);
+      document.getElementById('social-popup-overlay').addEventListener('click', function(e) { if (e.target === this) closeDemoPopup(); });
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeDemoPopup(); });
+    });
+  </script>
+  <script src="assets/js/theme.js" defer></script>
+  <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/animations.js" defer></script>
+</body>
 </html>
-
-

@@ -50,6 +50,18 @@ if (navToggle && primaryNav) {
 
 const revealElements = document.querySelectorAll('.reveal');
 
+// Mark elements already in the viewport on page load
+const isRevealInViewport = (el) => {
+  const rect = el.getBoundingClientRect();
+  return rect.top < window.innerHeight - 20 && rect.bottom > 0;
+};
+
+revealElements.forEach((el) => {
+  if (isRevealInViewport(el)) {
+    el.classList.add('visible');
+  }
+});
+
 const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -65,7 +77,11 @@ const revealObserver = new IntersectionObserver(
   }
 );
 
-revealElements.forEach((element) => revealObserver.observe(element));
+revealElements.forEach((element) => {
+  if (!element.classList.contains('visible')) {
+    revealObserver.observe(element);
+  }
+});
 
 const counterElements = document.querySelectorAll('[data-counter]');
 

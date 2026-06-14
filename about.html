@@ -1,194 +1,265 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Learn the story, mission, and vision behind Encouragement by Empowerment and hear from our founder."
-    />
-    <title>About Us | Encouragement by Empowerment</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" type="image/jpeg" href="logo.jpeg" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
-
-    <header class="site-header page-header">
-      <div class="container nav-wrap">
-<button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
-          <span></span><span></span><span></span>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about Encouragement by Empowerment's story, mission, vision, and the team behind our community impact.">
+  <meta name="author" content="Encouragement by Empowerment">
+  <meta property="og:title" content="About Us | Encouragement by Empowerment">
+  <meta property="og:description" content="Driven by compassion, built on community. Discover our story of empowerment and impact.">
+  <meta property="og:image" content="assets/images/og/og-about.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sinejhon.github.io/Encouragementbyempowerment/about">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://sinejhon.github.io/Encouragementbyempowerment/about">
+  <title>About Us | Encouragement by Empowerment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <style>
+    .about-hero { background: var(--gradient-card); border-radius: var(--radius-xl); padding: var(--space-2xl); margin-bottom: var(--space-2xl); }
+    .about-hero h1 { font-size: clamp(2rem, 5vw, var(--text-5xl)); margin-bottom: var(--space-md); }
+    .mission-vision { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
+    .mission-card, .vision-card { padding: var(--space-xl); border-radius: var(--radius-lg); color: white; position: relative; overflow: hidden; perspective: 1000px; }
+    .mission-card { background: var(--gradient-navy); }
+    .vision-card { background: var(--gradient-purple); }
+    .mission-card h3, .vision-card h3 { color: white; font-size: var(--text-2xl); margin-bottom: var(--space-sm); }
+    .mission-card p, .vision-card p { color: rgba(255,255,255,0.85); }
+    .mission-card .card-icon, .vision-card .card-icon { font-size: 2.5rem; margin-bottom: var(--space-md); }
+    .card-flip-inner { transition: transform 0.6s; transform-style: preserve-3d; }
+    .mission-card:hover .card-flip-inner, .vision-card:hover .card-flip-inner { transform: rotateY(10deg); }
+    .founder-section { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); align-items: center; }
+    .founder-image-wrap { position: relative; }
+    .founder-image-wrap img { border-radius: var(--radius-xl); aspect-ratio: 1/1; object-fit: cover; }
+    .founder-image-wrap::before { content: ''; position: absolute; width: 100%; height: 100%; border-radius: var(--radius-xl); background: var(--gradient-navy); opacity: 0.1; transform: rotate(-3deg) translate(8px, 8px); z-index: -1; }
+    .founder-badge { display: inline-flex; background: var(--color-primary); color: white; font-size: var(--text-xs); font-weight: 600; padding: 0.3rem 0.85rem; border-radius: var(--radius-full); margin-bottom: var(--space-md); text-transform: uppercase; letter-spacing: 0.05em; }
+    .founder-quote { font-family: var(--font-accent); font-size: clamp(var(--text-xl), 3vw, var(--text-3xl)); font-style: italic; line-height: 1.4; color: var(--text-primary); padding-left: var(--space-lg); border-left: 3px solid var(--color-primary); margin-bottom: var(--space-md); }
+    .timeline { position: relative; padding-left: var(--space-xl); }
+    .timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: var(--gradient-navy); }
+    .timeline-item { position: relative; margin-bottom: var(--space-lg); }
+    .timeline-item::before { content: ''; position: absolute; left: calc(-1 * var(--space-xl) + 3px); top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--color-primary); border: 2px solid var(--bg-base); }
+    .timeline-year { font-family: var(--font-display); font-weight: 800; font-size: var(--text-xl); color: var(--color-primary); margin-bottom: var(--space-xs); }
+    .timeline-text { color: var(--text-secondary); font-size: var(--text-sm); }
+    .impact-section {
+      padding: var(--space-2xl) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .impact-grid {
+      display: grid !important;
+      grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+      gap: var(--space-md);
+      position: relative;
+      z-index: 1;
+    }
+    .impact-item {
+      text-align: center;
+      padding: var(--space-lg) var(--space-md);
+      border-radius: var(--radius-lg);
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      transition: transform 0.3s var(--ease-spring), box-shadow 0.3s ease;
+      min-width: 0;
+    }
+    .impact-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .impact-item .counter-value {
+      color: var(--color-primary);
+      font-size: clamp(1.5rem, 3vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .impact-item .counter-label {
+      color: var(--text-secondary);
+      font-size: 0.78rem;
+      line-height: 1.4;
+    }
+    @media (max-width: 900px) {
+      .impact-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    }
+    @media (max-width: 480px) {
+      .impact-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .impact-item .counter-value { font-size: 1.4rem; }
+      .impact-item .counter-label { font-size: 0.7rem; }
+    }
+    @media (max-width: 768px) { .mission-vision, .founder-section { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div id="loading-bar" class="loading-bar"></div>
+  <div id="toast-container" class="toast-container"></div>
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+  <header class="site-header" role="banner">
+    <div class="container nav-wrap">
+      <a href="index.html" class="nav-brand"><img src="logo.jpeg" alt="" width="36" height="36"><span>Encouragement by Empowerment</span></a>
+      <nav aria-label="Primary navigation">
+        <ul id="nav-links" class="nav-links">
+          <li><a href="index.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</a></li>
+          <li><a href="about.html" class="active"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>About</a></li>
+          <li><a href="programs.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Programs</a></li>
+          <li><a href="involved.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>Get Involved</a></li>
+          <li><a href="events.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Events</a></li>
+          <li><a href="contact.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
         </button>
-        <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
-          <ul>
-            <li><a href="index.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5L12 4l9 7.5"></path><path d="M6.5 10.8V20h11V10.8"></path><path d="M10 20v-5h4v5"></path></svg><span>Home</span></a></li>
-            <li><a class="nav-current" href="about.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5h6a3 3 0 0 1 3 3V20a3 3 0 0 0-3-3h-6z"></path><path d="M20.5 6.5h-6a3 3 0 0 0-3 3V20a3 3 0 0 1 3-3h6z"></path><path d="M12 9.5v9.8"></path></svg><span>About Us</span></a></li>
-            <li><a href="programs.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="6" rx="1.5"></rect><rect x="3.5" y="13.5" width="8" height="6" rx="1.5"></rect><rect x="12.5" y="13.5" width="8" height="6" rx="1.5"></rect></svg><span>Programs</span></a></li>
-            <li><a href="involved.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.8 14.5h5.2l2.2 2.2a2 2 0 0 0 2.8 0l1-1"></path><path d="M21.2 14.5H16l-2.2 2.2a2 2 0 0 1-2.8 0l-1-1"></path><path d="M7 14.5l2.3-3.3a2 2 0 0 1 3.1-.2l2.6 2.7"></path></svg><span>Get Involved</span></a></li>
-            <li><a href="events.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2"></rect><path d="M8 8h8"></path><path d="M8 11h8"></path><path d="M8 14h5"></path><path d="M16.5 4.5v15"></path></svg><span>Events &amp; News</span></a></li>
-            <li><a href="contact.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.2L20.5 4.5 14 20l-2.9-6-8.1-2.8z"></path><path d="M11.1 14l9.4-9.5"></path></svg><span>Contact</span></a></li>
-</ul>
-        </nav>
-        <a class="nav-donate nav-donate-cta" href="donate.html"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19.2l-6.7-6.4a4.2 4.2 0 0 1 5.9-6l.8.8.8-.8a4.2 4.2 0 0 1 5.9 6z"></path><circle cx="18.5" cy="17.8" r="3"></circle><path d="M18.5 16.3v3"></path><path d="M17.5 17.2h2"></path></svg><span>Donate</span></a>
+        <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation menu"><span></span><span></span><span></span></button>
+        <a href="donate.html" class="btn btn-accent btn-donate-glow">Give Today — Change a Life</a>
       </div>
-      <section class="page-hero" aria-labelledby="about-title">
-        <div class="container reveal">
-          <p class="hero-kicker">About Our Organization</p>
-          <h1 id="about-title">Driven by Compassion, Built on Community</h1>
-          <p>
-            Encouragement by Empowerment exists to serve with integrity, care, and practical support
-            that helps people move from survival to stability and growth.
-          </p>
-        </div>
-      </section>
-    </header>
-
-    <main id="main-content">
-      <section class="section">
-        <div class="container split-grid">
-          <article class="card content-card reveal">
-            <h2>Our Story</h2>
-            <p>
-              We began as a small volunteer effort offering encouragement and referrals to families
-              navigating hardship. As needs grew, we expanded into structured mentorship, community
-              workshops, and coordinated support services.
-            </p>
-            <p>
-              Today, we continue to center dignity and hope while building strong relationships with
-              residents, community leaders, and partner organizations.
-            </p>
-          </article>
-          <div class="reveal delay-1">
-            <img
-              src="assets/images/photo-1521791055366-0d553872125f.jpg"
-              alt="Nonprofit team meeting with community members"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section class="section mission">
-        <div class="container split-grid">
-          <article class="highlight-card reveal">
-            <h2>Mission</h2>
-            <p>
-              To empower lives through encouragement, mentorship, and practical support that fosters
-              long-term wellness, confidence, and opportunity.
-            </p>
-          </article>
-          <article class="highlight-card reveal delay-1">
-            <h2>Vision</h2>
-            <p>
-              A thriving community where every individual has access to support systems, trusted
-              relationships, and the resources needed to succeed.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" aria-labelledby="about-impact-numbers-title">
-        <div class="container about-impact-numbers">
-          <div class="section-heading reveal">
-            <h2 id="about-impact-numbers-title">Impact by the Numbers</h2>
-            <p>
-              Each number represents real people and families reached through encouragement,
-              mentorship, and consistent community support.
-            </p>
-          </div>
-
-          <div class="numbers-grid">
-            <article class="number-card reveal" aria-label="Individuals helped since launch">
-              <p class="counter-value" data-counter data-target="1250" data-prefix="">0</p>
-              <p class="counter-label">Individuals Helped Since Launch</p>
-            </article>
-
-            <article class="number-card reveal delay-1" aria-label="Families served">
-              <p class="counter-value" data-counter data-target="420" data-prefix="">0</p>
-              <p class="counter-label">Families Served</p>
-            </article>
-
-            <article class="number-card reveal delay-2" aria-label="Active volunteers">
-              <p class="counter-value" data-counter data-target="200" data-prefix="">0</p>
-              <p class="counter-label">Active Volunteers</p>
-            </article>
-
-            <article class="number-card reveal delay-3" aria-label="Program completion rate">
-              <p class="counter-value" data-counter data-target="92" data-suffix="%">0%</p>
-              <p class="counter-label">Program Completion Rate</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section founder-section">
-        <div class="container founder-showcase">
-          <figure class="founder-portrait-wrap reveal">
-            <div class="founder-circle-base">
-              <img
-                class="founder-portrait"
-                src="founder.png"
-                alt="Founder speaking with volunteers"
-                loading="lazy"
-              />
-            </div>
-          </figure>
-
-          <article class="card founder-message-bar reveal delay-1">
-            <p class="founder-label">Founder&apos;s Message</p>
-            <h2>Encouragement That Creates Lasting Change</h2>
-            <p>
-              "Encouragement can change the direction of a life. Our commitment is to serve with
-              consistency, humility, and excellence, so every person who reaches out feels valued
-              and supported."
-            </p>
-            <p class="signature">- Founder, Encouragement by Empowerment</p>
-          </article>
-        </div>
-      </section>
-    </main>
-    <footer class="site-footer">
-      <div class="container footer-wrap">
-        <a class="footer-brand" href="index.html" aria-label="Encouragement by Empowerment home">
-          <img class="footer-logo" src="logo.jpeg" alt="Encouragement by Empowerment logo" />
-          <span class="footer-brand-text-wrap">
-            <span class="footer-brand-name">Encouragement by Empowerment</span>
-            <span class="footer-brand-tag">Empowering lives through encouragement</span>
-          </span>
-        </a>
-
-        <div class="footer-links-group">
-          <a class="footer-link" href="mailto:hello@encouragementbyempowerment.org" aria-label="Send us an email" data-unset-alert data-alert-message="Not Connected Yet, Since It Is A Demo Project">
-            <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 8l9 6 9-6"></path></svg>
-            <span>hello@encouragementbyempowerment.org</span>
-          </a>
-          <div class="footer-social" aria-label="Social links">
-            <a class="footer-link footer-social-link" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" data-unset-alert data-alert-message="Not Connected Yet, Since It Is A Demo Project">
-              <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"></rect><circle cx="12" cy="12" r="3.6"></circle><circle cx="17.4" cy="6.6" r="1"></circle></svg>
-              <span>Instagram</span>
-            </a>
-            <a class="footer-link footer-social-link" href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" data-unset-alert data-alert-message="Not Connected Yet, Since It Is A Demo Project">
-              <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 8h2.6V4.8h-2.9c-3.4 0-5.1 2-5.1 5.3V13H6v3.3h2.8V20h3.6v-3.7h3l.5-3.3h-3.5V10.6c0-1.2.5-1.9 1.8-1.9z"></path></svg>
-              <span>Facebook</span>
-            </a>
-            <a class="footer-link footer-social-link" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" data-unset-alert data-alert-message="Not Connected Yet, Since It Is A Demo Project">
-              <svg class="footer-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="9" width="3.2" height="11"></rect><circle cx="5.6" cy="5.8" r="1.8"></circle><path d="M10 9h3.1v1.6c.6-1.1 1.9-1.9 3.7-1.9 3 0 4.2 1.9 4.2 5v6.3h-3.3v-5.6c0-1.7-.6-2.7-2.1-2.7-1.4 0-2.3 1-2.3 2.7v5.6H10z"></path></svg>
-              <span>LinkedIn</span>
-            </a>
-          </div>
-        </div>
-
-        <p class="footer-copy">&copy; 2026 Encouragement by Empowerment. All rights reserved.</p>
+    </div>
+  </header>
+  <main id="main-content">
+    <section class="page-hero fade-up">
+      <div class="container">
+        <span class="eyebrow">Our Story</span>
+        <h1>Driven by Compassion,<br>Built on Community</h1>
+        <p>Discover how Encouragement by Empowerment grew from a simple vision into a movement of lasting change.</p>
       </div>
-    </footer>
-<script src="script.js"></script>
-  </body>
+    </section>
+    <section class="section">
+      <div class="container about-hero fade-up">
+        <div class="founder-section">
+          <div class="founder-image-wrap">
+            <img src="founder.png" alt="Founder of Encouragement by Empowerment" width="500" height="500" loading="lazy">
+          </div>
+          <div>
+            <div class="founder-badge">Founder's Message</div>
+            <div class="founder-quote">"Every person deserves someone who believes in them. That belief can change everything."</div>
+            <p style="margin-bottom: var(--space-sm);">Encouragement by Empowerment was born from a simple belief — that with the right support, anyone can overcome obstacles and build a life of purpose and dignity. What started as a small volunteer effort has grown into a trusted community organization serving hundreds of individuals and families.</p>
+            <p><strong style="color: var(--text-primary);">— Founder</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" style="background: var(--bg-elevated);">
+      <div class="container">
+        <div class="section-heading fade-up">
+          <span class="eyebrow">Our Journey</span>
+          <h2>How We've Grown</h2>
+        </div>
+        <div class="timeline fade-up" style="max-width: 600px; margin: 0 auto;">
+          <div class="timeline-item"><div class="timeline-year">2020</div><div class="timeline-text">Founded as a volunteer-led effort, serving 15 families in the first year with basic mentorship and support.</div></div>
+          <div class="timeline-item"><div class="timeline-year">2021</div><div class="timeline-text">First structured mentorship cohort launched. Expanded to include life skills training and family support programs.</div></div>
+          <div class="timeline-item"><div class="timeline-year">2022</div><div class="timeline-text">Formed key community partnerships with local schools, faith communities, and corporate sponsors. Reached 100+ families served.</div></div>
+          <div class="timeline-item"><div class="timeline-year">2023</div><div class="timeline-text">Expanded to 3 core program areas. Hired first full-time staff. Launched community initiative events.</div></div>
+          <div class="timeline-item"><div class="timeline-year">2024+</div><div class="timeline-text">Continued regional growth. 500+ lives transformed. Building toward sustainable, long-term community impact.</div></div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section-heading fade-up">
+          <span class="eyebrow">Our Purpose</span>
+          <h2>Mission & Vision</h2>
+        </div>
+        <div class="mission-vision fade-up stagger-children">
+          <div class="mission-card"><div class="card-flip-inner"><div class="card-icon">🎯</div><h3>Our Mission</h3><p>To empower individuals and families through trusted mentorship, practical support, and community-rooted programs that create lasting positive change.</p></div></div>
+          <div class="vision-card"><div class="card-flip-inner"><div class="card-icon">🌟</div><h3>Our Vision</h3><p>A world where every person has access to the relationships, resources, and encouragement they need to thrive with confidence and dignity.</p></div></div>
+        </div>
+      </div>
+    </section>
+    <section class="impact-section" aria-labelledby="impact-title">
+      <div class="container">
+        <div class="section-heading fade-up">
+          <span class="eyebrow">Our Impact</span>
+          <h2 id="impact-title">Measurable Change in Real Lives</h2>
+          <p>Every number represents a person, a family, or a community we've walked alongside.</p>
+        </div>
+        <div class="impact-grid stagger-children fade-up">
+          <div class="impact-item"><p class="counter-value" data-counter data-target="500" data-prefix="" data-suffix="+">0</p><p class="counter-label">Lives Transformed Since Launch</p></div>
+          <div class="impact-item"><p class="counter-value" data-counter data-target="200" data-prefix="" data-suffix="+">0</p><p class="counter-label">Families Served</p></div>
+          <div class="impact-item"><p class="counter-value" data-counter data-target="75" data-prefix="" data-suffix="+">0</p><p class="counter-label">Active Volunteers</p></div>
+          <div class="impact-item"><p class="counter-value" data-counter data-target="94" data-prefix="" data-suffix="%">0</p><p class="counter-label">Program Completion Rate</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- ===== SOCIAL POPUP ===== -->
+  <div class="social-popup-overlay" id="social-popup-overlay">
+    <div class="social-popup">
+      <button class="social-popup-close" id="social-popup-close" aria-label="Close popup">&times;</button>
+      <div class="social-popup-icon" id="social-popup-icon">🔗</div>
+      <h3 id="social-popup-title">Coming Soon</h3>
+      <p id="social-popup-desc">This social media link is not set up yet. This is a demo project — the link will be available in the full version.</p>
+      <button class="btn btn-primary" id="social-popup-btn">Got It</button>
+    </div>
+  </div>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-section">
+          <a href="index.html" class="footer-brand"><img src="logo.jpeg" alt="" width="40" height="40">Encouragement by Empowerment</a>
+          <p class="footer-tagline">Empowering lives through trusted mentorship, community programs, and practical support that helps individuals and families thrive.</p>
+          <div class="footer-social">
+            <a href="#" onclick="showSocialPopup('Instagram', '📸'); return false;" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" onclick="showSocialPopup('Facebook', '📘'); return false;" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a href="#" onclick="showSocialPopup('LinkedIn', '💼'); return false;" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="mailto:hello@encouragementbyempowerment.org" aria-label="Send email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          </div>
+        </div>
+        <div><h4 class="footer-heading">Quick Links</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="programs.html">Programs</a></li><li><a href="involved.html">Get Involved</a></li><li><a href="events.html">Events & News</a></li><li><a href="contact.html">Contact</a></li><li><a href="donate.html">Donate</a></li></ul></div>
+        <div><h4 class="footer-heading">Programs</h4><ul class="footer-links"><li><a href="programs.html">Youth Mentorship</a></li><li><a href="programs.html">Life Skills Training</a></li><li><a href="programs.html">Family Support</a></li><li><a href="programs.html">Community Initiatives</a></li></ul></div>
+        <div><h4 class="footer-heading">Stay Connected</h4><ul class="footer-contact"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>hello@encouragementbyempowerment.org</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Serving communities international</span></li></ul>
+          <div class="footer-newsletter"><div id="footer-newsletter-wrapper"><p style="font-size:var(--text-sm);color:var(--text-secondary);margin-bottom:var(--space-sm);">Join our newsletter for updates.</p><form id="footer-newsletter-form"><input type="email" id="footer-newsletter-email" class="form-input" placeholder="Your email" required aria-label="Email for newsletter"><button type="submit">Subscribe</button></form><p id="footer-newsletter-error" style="font-size:var(--text-xs);color:#EF4444;margin-top:var(--space-xs);display:none;">Please enter a valid email address.</p></div><div id="footer-newsletter-success" style="display:none;padding:var(--space-sm) 0;font-size:var(--text-sm);color:#10B981;font-weight:600;">🎉 Thank you! You've been subscribed.</div></div>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>&copy; 2026 Encouragement by Empowerment. All rights reserved.</span><div class="footer-bottom-links"><span>Developed by SY Tech Solutions</span></div></div>
+    </div>
+  </footer>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const overlay = document.getElementById('social-popup-overlay');
+    const closeBtn = document.getElementById('social-popup-close');
+    const popupBtn = document.getElementById('social-popup-btn');
+    const popupTitle = document.getElementById('social-popup-title');
+    const popupIcon = document.getElementById('social-popup-icon');
+    const popupDesc = document.getElementById('social-popup-desc');
+    window.showSocialPopup = function(name, icon) {
+      popupTitle.textContent = name + ' — Coming Soon';
+      popupIcon.textContent = icon;
+      popupDesc.textContent = 'This ' + name + ' link is not set up yet. This is a demo project — the link will be available in the full version.';
+      overlay.classList.add('visible');
+    };
+    function closePopup() { overlay.classList.remove('visible'); }
+    closeBtn.addEventListener('click', closePopup); popupBtn.addEventListener('click', closePopup);
+    overlay.addEventListener('click', function(e) { if (e.target === overlay) closePopup(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePopup(); });
+    const footerForm = document.getElementById('footer-newsletter-form');
+    const footerEmail = document.getElementById('footer-newsletter-email');
+    const footerError = document.getElementById('footer-newsletter-error');
+    const footerWrapper = document.getElementById('footer-newsletter-wrapper');
+    const footerSuccess = document.getElementById('footer-newsletter-success');
+    if (footerForm) {
+      footerForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = footerEmail.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email || !emailRegex.test(email)) { footerEmail.style.borderColor = '#EF4444'; footerError.style.display = 'block'; footerEmail.focus(); return; }
+        footerEmail.style.borderColor = ''; footerError.style.display = 'none'; footerWrapper.style.display = 'none'; footerSuccess.style.display = 'block';
+      });
+      footerEmail.addEventListener('input', function() { if (this.style.borderColor === 'rgb(239, 68, 68)') { this.style.borderColor = ''; footerError.style.display = 'none'; } });
+    }
+  });
+  </script>
+  <script src="assets/js/theme.js" defer></script>
+  <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/counters.js" defer></script>
+  <script src="assets/js/animations.js" defer></script>
+  <script src="assets/js/forms.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"NonprofitOrganization","name":"Encouragement by Empowerment","url":"https://sinejhon.github.io/Encouragementbyempowerment/","description":"Nonprofit helping individuals and families through mentorship, community programs, and practical support.","email":"hello@encouragementbyempowerment.org"}</script>
+</body>
 </html>
-
-
