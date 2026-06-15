@@ -258,6 +258,92 @@
   text-align: center;
 }
 
+/* Form Inline Message */
+.form-inline-message {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  margin-top: var(--space-md);
+  font-weight: 500;
+  line-height: 1.5;
+  animation: formMsgSlideIn 0.4s var(--ease-out-expo);
+}
+
+.form-inline-message.form-success {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1.5px solid rgba(16, 185, 129, 0.25);
+  color: #059669;
+}
+
+.form-inline-message.form-error {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1.5px solid rgba(239, 68, 68, 0.25);
+  color: #DC2626;
+}
+
+.form-inline-msg-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.form-inline-message.form-success .form-inline-msg-icon {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10B981;
+}
+
+.form-inline-message.form-error .form-inline-msg-icon {
+  background: rgba(239, 68, 68, 0.12);
+  color: #EF4444;
+}
+
+.form-inline-msg-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.form-inline-msg-body h4 {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.form-inline-msg-body p {
+  font-size: var(--text-sm);
+  font-weight: 400;
+  opacity: 0.85;
+  margin: 0;
+}
+
+[data-theme="dark"] .form-inline-message.form-success {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #34D399;
+}
+
+[data-theme="dark"] .form-inline-message.form-error {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #F87171;
+}
+
+@keyframes formMsgSlideIn {
+  from { opacity: 0; transform: translateY(12px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
 /* Pill Tags */
 .pill {
   display: inline-flex;

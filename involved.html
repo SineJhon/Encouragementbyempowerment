@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/phone-input.css">
   <style>
     .donation-tiers { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-md); margin-bottom: var(--space-lg); }
     .tier-card { padding: var(--space-lg); border-radius: var(--radius-md); border: 2px solid var(--border); text-align: center; cursor: pointer; transition: all 0.2s ease; background: var(--bg-surface); }
@@ -118,10 +119,10 @@
           <div>
             <div class="card volunteer-form-card">
               <h3 style="margin-bottom: var(--space-md);">Apply to Volunteer</h3>
-              <form data-form="volunteer">
+              <form data-form="volunteer" data-success-message="Thank you for applying to volunteer! We've received your application and will be in touch soon to discuss next steps.">
                 <div class="form-group"><label class="form-label" for="v-name">Full Name</label><input id="v-name" class="form-input" type="text" required placeholder="Your name"></div>
                 <div class="form-group"><label class="form-label" for="v-email">Email</label><input id="v-email" class="form-input" type="email" required placeholder="your@email.com"></div>
-                <div class="form-group"><label class="form-label" for="v-phone">Phone</label><input id="v-phone" class="form-input" type="tel" placeholder="(555) 000-0000"></div>
+                <div class="form-group"><label class="form-label" for="v-phone">Phone</label><div class="pi-group" data-phone-input data-name="v-country" data-default="KE"></div></div>
                 <div class="form-group"><label class="form-label" for="v-interest">Area of Interest</label><select id="v-interest" class="form-select"><option>Youth Mentorship</option><option>Events</option><option>Administrative</option><option>Community Outreach</option></select></div>
                 <div class="form-group"><label class="form-label" for="v-message">Why do you want to volunteer?</label><textarea id="v-message" class="form-textarea" rows="3"></textarea></div>
                 <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Application</button>
@@ -219,6 +220,7 @@
       el.classList.add('selected');
     }
   </script>
+  <script src="assets/js/phone-input.js" defer></script>
   <script src="assets/js/theme.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
   <script src="assets/js/animations.js" defer></script>
