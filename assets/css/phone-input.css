@@ -70,6 +70,8 @@
   font-size: 1.35rem;
   line-height: 1;
   filter: drop-shadow(0 0.5px 1px rgba(0,0,0,0.08));
+  /* Emoji fallback for flag rendering on Windows */
+  font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", "EmojiOne Color", sans-serif;
 }
 
 .pi-country-name {
@@ -251,6 +253,7 @@
   font-size: 1.25rem;
   line-height: 1;
   flex-shrink: 0;
+  font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", "EmojiOne Color", sans-serif;
 }
 
 .pi-option-info {
@@ -325,7 +328,7 @@
 }
 
 /* --- Hidden Input (E.164) --- */
-/pi-e164-input {
+.pi-e164-input {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -396,5 +399,44 @@
 
   .pi-country-name {
     max-width: 50px;
+  }
+
+  .pi-country-btn {
+    min-width: 90px;
+    padding: 0 0.5rem;
+    gap: 0.25rem;
+  }
+
+  .pi-flag {
+    font-size: 1.1rem;
+  }
+
+  .pi-dial {
+    font-size: 0.7rem;
+  }
+
+  .pi-chevron {
+    width: 10px;
+    height: 10px;
+  }
+
+  .pi-phone-input {
+    padding: 0.55rem 0.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .pi-country-btn {
+    min-width: 70px;
+    padding: 0 0.35rem;
+  }
+
+  .pi-country-name {
+    display: none;
+  }
+
+  .pi-dial {
+    font-size: 0.65rem;
   }
 }

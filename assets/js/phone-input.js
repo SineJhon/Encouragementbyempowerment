@@ -1,7 +1,15 @@
 /* Premium International Phone Input — phone-input.js */
 (function(){
 'use strict';
-function toFlag(c){return String.fromCodePoint(...[...c.toUpperCase()].map(function(x){return 0x1f1e6+x.charCodeAt(0)-65}))}
+function toFlag(c){
+  try{
+    var code=c.toUpperCase();
+    if(code.length!==2)return'🏁';
+    var high=0x1F1E6+code.charCodeAt(0)-65;
+    var low=0x1F1E6+code.charCodeAt(1)-65;
+    return String.fromCodePoint(high,low);
+  }catch(e){return'🏁'}
+}
 var D=[
 ["Afghanistan","+93","AF",9,9],["Albania","+355","AL",8,9],["Algeria","+213","DZ",9,9],
 ["American Samoa","+1-684","AS",10,10],["Andorra","+376","AD",6,9],["Angola","+244","AO",9,9],
@@ -197,16 +205,19 @@ var digits=this.phoneInput.value.replace(/\D/g,'');
 var c=this._selected;if(!c)return;
 var msgEl=this.validEl;
 msgEl.innerHTML='';
-if(digits.length===0){this.wrapper.classList.remove('pi-valid','pi-invalid');msgEl.className='pi-validation';return}
+var inp=this.phoneInput;
+if(digits.length===0){this.wrapper.classList.remove('pi-valid','pi-invalid');msgEl.className='pi-validation';inp.setCustomValidity('');return}
 var r=validatePhone(digits,c);
 if(r.valid){
 this.wrapper.classList.add('pi-valid');this.wrapper.classList.remove('pi-invalid');
 msgEl.className='pi-validation pi-success';
 msgEl.innerHTML='<svg class="pi-validation-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>'+r.msg;
+inp.setCustomValidity('');
 }else{
 this.wrapper.classList.add('pi-invalid');this.wrapper.classList.remove('pi-valid');
 msgEl.className='pi-validation pi-error';
 msgEl.innerHTML='<svg class="pi-validation-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>'+r.msg;
+inp.setCustomValidity(r.msg);
 }
 if(this.onValidate)this.onValidate(digits,c,r);
 };
@@ -222,7 +233,7 @@ var groups=document.querySelectorAll('[data-phone-input]');
 groups.forEach(function(g){
 if(g._piInit)return;g._piInit=true;
 var dc=g.dataset.default||g.dataset.defaultCountry||'auto';
-new PhoneInput(g,{defaultCountry:dc});
+g._pi = new PhoneInput(g,{defaultCountry:dc});
 });
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',autoInit);else autoInit();

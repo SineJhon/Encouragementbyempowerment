@@ -43,6 +43,27 @@
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
+      // Validate phone inputs using the component's .isValid() method
+      // Phone is optional — only validate if the user entered digits
+      var phoneGroups = form.querySelectorAll('[data-phone-input]');
+      for (var i = 0; i < phoneGroups.length; i++) {
+        var pi = phoneGroups[i];
+        if (pi._pi) {
+          var phoneInput = pi.querySelector('.pi-phone-input');
+          var digits = phoneInput ? phoneInput.value.replace(/\D/g, '') : '';
+          if (digits.length > 0 && !pi._pi.isValid()) {
+            if (phoneInput) {
+              phoneInput.setCustomValidity('Please enter a valid phone number for the selected country.');
+              phoneInput.reportValidity();
+              phoneInput.focus();
+            }
+            return;
+          } else {
+            if (phoneInput) phoneInput.setCustomValidity('');
+          }
+        }
+      }
+
       if (!form.reportValidity()) return;
 
       if (submitBtn) {

@@ -1703,11 +1703,9 @@ select:focus {
     background: #fffefc;
     padding: 0.5rem;
     max-height: 0;
-    opacity: 0;
     overflow: hidden;
     pointer-events: none;
-    transform: translateY(-6px);
-    transition: max-height 280ms ease, opacity 240ms ease, transform 240ms ease;
+    transition: max-height 280ms ease;
   }
 
   .nav-wrap {
@@ -1720,15 +1718,18 @@ select:focus {
 
   .primary-nav.open {
     max-height: 420px;
-    opacity: 1;
     pointer-events: auto;
-    transform: translateY(0);
   }
 
   .primary-nav ul {
     flex-direction: column;
     align-items: stretch;
     gap: 0.25rem;
+  }
+
+  .primary-nav li {
+    opacity: 1;
+    transform: none;
   }
 
   .primary-nav {
